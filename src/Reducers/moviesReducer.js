@@ -1,5 +1,5 @@
 
-const initialState = 'ADD_MOVIES';
+const initialState = [];
 
 export const moviesReducer = (state = initialState, action) => {
   switch (action.type) {
