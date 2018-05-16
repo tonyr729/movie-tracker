@@ -10,8 +10,6 @@ import { BrowserRouter as Router } from 'react-router-dom';
 const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && 
                  window.__REDUX_DEVTOOLS_EXTENSION__();
 const store = createStore(rootReducer, devTools);
-console.log(rootReducer)
-
 
 ReactDOM.render(
   <Provider store={store}>
