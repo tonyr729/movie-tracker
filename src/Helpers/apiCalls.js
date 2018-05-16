@@ -10,3 +10,20 @@ export const fetchMovieData = async () => {
   
   return cleanData;
 }
+
+export const signIn = async (email,password) => {
+  const url= 'http://localhost:3000/api/users';
+  const response = await fetch(url,{
+    method: 'POST',
+    headers: {
+      'Content-type': 'application/json'
+    },
+    body: {
+      email,
+      password
+    }
+  })
+  debugger
+  const user = await response.json();
+
+}

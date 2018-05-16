@@ -3,14 +3,14 @@ import {fetchMovieData} from '../../Helpers/apiCalls.js'
 import './App.css';
 
 class App extends Component {
-  constructor(){ 
+  constructor () { 
     super();
     this.state = {
       movies: []
     }
   }
 
-  async componentDidMount(){
+  async componentDidMount () {
     const movieData = await fetchMovieData()
     const movieDisplay = movieData.map(movie => {
       return (
@@ -26,8 +26,7 @@ class App extends Component {
     })
   }
 
-
-  render() {
+  render () {
     return (
       <div>
         { this.state.movies }
