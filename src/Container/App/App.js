@@ -1,39 +1,43 @@
 import React, { Component } from 'react';
 import {fetchMovieData} from '../../Helpers/apiCalls.js'
 import './App.css';
+import { connect } from 'react-redux';
+import { addMovies } from '../../Actions/actions.js';
 
 class App extends Component {
-  constructor(){ 
-    super();
-    this.state = {
-      movies: []
-    }
+
+  async componentDidMount () {
+    const movieData = await fetchMovieData();
+    this.props.addMovies(movieData)
   }
 
-  async componentDidMount(){
-    const movieData = await fetchMovieData()
-    const movieDisplay = movieData.map(movie => {
+  render () {
+
+    const movieDisplay = this.props.movies.map((movie, index) => {
       return (
-        <div>
+        <div key={index} >
           <p>{movie.title}</p>
           <img src={`https://image.tmdb.org/t/p/w500${movie.image}`} alt=""/>
         </div>
-
       )
     })
-    this.setState({
-      movies: movieDisplay
-    })
-  }
 
-
-  render() {
     return (
       <div>
-        { this.state.movies }
+        { movieDisplay }
       </div>
     );
   }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return ({
+    movies: state.movies
+  })
+}
+
+const mapDispatchToProps = dispatch => ({
+  addMovies: (movieData) => dispatch(addMovies(movieData))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
