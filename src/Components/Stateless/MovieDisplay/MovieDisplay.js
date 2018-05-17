@@ -3,6 +3,7 @@ import {fetchMovieData} from './../../../Helpers/apiCalls';
 import './MovieDisplay.css';
 import { connect } from 'react-redux';
 import { addMovies } from './../../../Actions/actions';
+import PropTypes from 'prop-types'
 
 class MovieDisplay extends Component {
   constructor() {
@@ -33,6 +34,7 @@ class MovieDisplay extends Component {
   }
 }
 
+
 const mapStateToProps = (state) => {
   return ({
     movies: state.movies
@@ -42,5 +44,10 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = dispatch => ({
   addMovies: (movieData) => dispatch(addMovies(movieData))
 });
+
+MovieDisplay.propTypes = {
+  movies: PropTypes.array,
+  addMovies: PropTypes.func
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(MovieDisplay);
