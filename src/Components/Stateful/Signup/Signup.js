@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Login extends Component {
+class Signup extends Component {
   constructor() {
     super();
     this.state = {
@@ -14,10 +14,9 @@ class Login extends Component {
       <form action="">
         <input type="text" placeholder='Email'/>
         <input type="text" placeholder='Password'/>
+        
         <button>Submit</button>
       </form>
-    );
+    )
   }
 }
-
-export default Login;
