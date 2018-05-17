@@ -2,13 +2,9 @@ import React, { Component } from 'react';
 import {fetchMovieData} from './../../../Helpers/apiCalls';
 import './MovieDisplay.css';
 import { connect } from 'react-redux';
-<<<<<<< HEAD
-import { addMovies } from './../../../Actions/actions';
-import PropTypes from 'prop-types'
-=======
+import PropTypes from 'prop-types';
 import { addMovies, addFavorites } from './../../../Actions/actions';
 
->>>>>>> Add favorites component and add favorites functionality
 
 class MovieDisplay extends Component {
   constructor() {
