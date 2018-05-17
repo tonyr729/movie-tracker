@@ -15,19 +15,32 @@ export const fetchMovieData = async () => {
   }
 };
 
-// export const signIn = async (email,password) => {
-//   const url= 'http://localhost:3000/api/users';
-//   const response = await fetch(url,{
-//     method: 'POST',
-//     headers: {
-//       'Content-type': 'application/json'
-//     },
-//     body: {
-//       email,
-//       password
-//     }
-//   })
-//   debugger
-//   const user = await response.json();
+export const signIn = async (email,password) => {
+  const url= 'http://localhost:3000/api/users';
+  const response = await fetch(url,{
+    method: 'GET',
+    headers: {
+      'Content-type': 'application/json'
+    },
+    body: {
+      email,
+      password
+    }
+  })
+  const user = await response.json();
+  console.log(user)
+}
 
-// }
+export const signUp = async (email,password) => {
+  const url= 'http://localhost:3000/api/users';
+  const body= {email, password}
+  const stringifiedBody = JSON.stringify(body)
+  const response = await fetch(url,{
+    method: 'POST',
+    headers: {
+      'Content-type': 'application/json'
+    },
+    body
+  })
+  const user = await response.json();
+}
