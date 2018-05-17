@@ -2,7 +2,13 @@ import React, { Component } from 'react';
 import {fetchMovieData} from './../../../Helpers/apiCalls';
 import './MovieDisplay.css';
 import { connect } from 'react-redux';
+<<<<<<< HEAD
 import { addMovies } from './../../../Actions/actions';
+import PropTypes from 'prop-types'
+=======
+import { addMovies, addFavorites } from './../../../Actions/actions';
+
+>>>>>>> Add favorites component and add favorites functionality
 
 class MovieDisplay extends Component {
   constructor() {
@@ -11,7 +17,7 @@ class MovieDisplay extends Component {
 
   async componentDidMount () {
     const movieData = await fetchMovieData();
-    this.props.addMovies(movieData)
+    this.props.addMovies(movieData);
   }
 
   render () {
@@ -21,6 +27,7 @@ class MovieDisplay extends Component {
         <div key={index} >
           <p>{movie.title}</p>
           <img src={`https://image.tmdb.org/t/p/w500${movie.image}`} alt={movie.title}/>
+          <button onClick={() => this.props.addFavorites(movie)}>Favorite</button>
         </div>
       );
     });
@@ -33,6 +40,7 @@ class MovieDisplay extends Component {
   }
 }
 
+
 const mapStateToProps = (state) => {
   return ({
     movies: state.movies
@@ -40,7 +48,13 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  addMovies: (movieData) => dispatch(addMovies(movieData))
+  addMovies: (movieData) => dispatch(addMovies(movieData)),
+  addFavorites: (movie) => dispatch(addFavorites(movie))
 });
+
+MovieDisplay.propTypes = {
+  movies: PropTypes.array,
+  addMovies: PropTypes.func
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(MovieDisplay);
