@@ -14,9 +14,11 @@ class Signup extends Component {
       <form action="">
         <input type="text" placeholder='Email'/>
         <input type="text" placeholder='Password'/>
-        
+        <input type="text" placeholder='Confirm Password'/>
         <button>Submit</button>
       </form>
-    )
+    );
   }
 }
+
+export default Signup;
