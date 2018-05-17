@@ -39,16 +39,23 @@ export const signIn = async (email,password) => {
   }
 }
 
-export const signUp = async (email,password) => {
-  const url= 'http://localhost:3000/api/users';
-  const body= {email, password}
-  const stringifiedBody = JSON.stringify(body)
+export const signUp = async (name, email, password) => {
+  const url= 'http://localhost:3000/api/users/new';
+  const body= {name, email, password};
+  const stringifiedBody = JSON.stringify(body);
   const response = await fetch(url,{
     method: 'POST',
     headers: {
       'Content-type': 'application/json'
     },
-    body
+    body: stringifiedBody
   })
-  const user = await response.json();
+  if(response.ok){
+    const user = await response.json();
+    return user;
+  } else {
+    const error = await {error: "Username is already taken"};
+    return error;
+  }
+
 }
