@@ -10,10 +10,11 @@ class Login extends Component {
     };
   }
 
-  handleSubmit = (event) => {
+  handleSubmit = async (event) => {
     const email = this.state.email.toLowerCase();
     event.preventDefault();
-    signIn(email, this.state.password)
+    const user = await signIn(email, this.state.password)
+    console.log(user)
   }
 
   handleSignin = (event) => {

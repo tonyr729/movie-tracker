@@ -16,19 +16,27 @@ export const fetchMovieData = async () => {
 };
 
 export const signIn = async (email,password) => {
-  const url= 'http://localhost:3000/api/users';
-  const response = await fetch(url,{
-    method: 'GET',
-    headers: {
-      'Content-type': 'application/json'
-    },
-    body: {
-      email,
-      password
+  try{
+    const url= 'http://localhost:3000/api/users';
+    const login= {email, password}
+    const stringifiedBody = JSON.stringify(login)
+    const response = await fetch(url,{
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json'
+      },
+      body: stringifiedBody
+    })
+    if(response.ok){
+      const user = await response.json();
+      return user
+    } else {
+      const error = await {error: "Invalid Username or Password"}
+      return error
     }
-  })
-  const user = await response.json();
-  console.log(user)
+  }catch(error) {
+    throw new Error(error);
+  }
 }
 
 export const signUp = async (email,password) => {
