@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 
 const Favorites = ({ favorites }) => {
   const favoritesDisplay = favorites.map((movie, index) => {
-    console.log('fuck my ass')
     return (
       <div key={index} >
         <p>{movie.title}</p>
