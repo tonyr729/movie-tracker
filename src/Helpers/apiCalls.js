@@ -15,46 +15,46 @@ export const fetchMovieData = async () => {
   }
 };
 
-export const signIn = async (email,password) => {
-  try{
-    const url= 'http://localhost:3000/api/users';
-    const login= {email, password}
+export const signIn = async (email, password) => {
+  try {
+    const url = 'http://localhost:3000/api/users';
+    const login = {email, password}
     const stringifiedBody = JSON.stringify(login)
-    const response = await fetch(url,{
+    const response = await fetch(url, {
       method: 'POST',
       headers: {
         'Content-type': 'application/json'
       },
       body: stringifiedBody
     })
-    if(response.ok){
+    if (response.ok) {
       const user = await response.json();
-      return user
+      return user;
     } else {
-      const error = await {error: "Invalid Username or Password"}
-      return error
+      const data = await {data: 'Invalid Username or Password'}
+      return data;
     }
-  }catch(error) {
+  } catch (error) {
     throw new Error(error);
   }
 }
 
 export const signUp = async (name, email, password) => {
-  const url= 'http://localhost:3000/api/users/new';
-  const body= {name, email, password};
+  const url = 'http://localhost:3000/api/users/new';
+  const body = {name, email, password};
   const stringifiedBody = JSON.stringify(body);
-  const response = await fetch(url,{
+  const response = await fetch(url, {
     method: 'POST',
     headers: {
       'Content-type': 'application/json'
     },
     body: stringifiedBody
   })
-  if(response.ok){
+  if (response.ok) {
     const user = await response.json();
     return user;
   } else {
-    const error = await {error: "Username is already taken"};
+    const error = await {error: 'Username is already taken'};
     return error;
   }
 
