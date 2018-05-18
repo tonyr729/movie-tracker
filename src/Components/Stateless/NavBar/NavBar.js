@@ -1,16 +1,37 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './NavBar.css';
+import { connect } from 'react-redux';
+import { logout } from '../../../Actions/actions';
 
-const NavBar = () => {
-  return (
-    <header>
-      <NavLink exact to='/' className='nav' activeClassName='selected'>Home</NavLink>
-      <NavLink exact to='/login' className='nav' activeClassName='selected'>Log In</NavLink>
-      <NavLink exact to='/signup' className='nav' activeClassName='selected'>Sign Up</NavLink>       
-      <NavLink exact to='/favorites' className='nav' activeClassName='selected'>Favorites</NavLink>         
-    </header>
-  )
+const NavBar = (props) => {
+  console.log(props)
+  if (!props.user.name) {
+    return (
+      <header>
+        <NavLink exact to='/' className='nav' activeClassName='selected'>Home</NavLink>      
+        <NavLink exact to='/login' className='nav' activeClassName='selected'>Log In</NavLink>
+        <NavLink exact to='/signup' className='nav' activeClassName='selected'>Sign Up</NavLink>  
+        <NavLink exact to='/favorites' className='nav' activeClassName='selected'>Favorites</NavLink>
+      </header>                       
+    )   
+  } else {
+    return (
+      <header>
+        <NavLink exact to='/' className='nav' activeClassName='selected'>Home</NavLink>
+        <NavLink exact to='/favorites' className='nav' activeClassName='selected'>Favorites</NavLink>         
+        <button className='nav' onClick={props.logout}>Sign Out</button>
+      </header>
+    )
+  }
 }
 
-export default NavBar;
+const mapStateToProps = (state) => ({
+  user: state.user
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  logout: () => dispatch(logout())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(NavBar);
