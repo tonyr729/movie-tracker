@@ -20,11 +20,13 @@ class Login extends Component {
     const user = await signIn(email, this.state.password);
     this.props.login(user.data);
     this.setState({
-      status: this.userAuthorization()
+      email: '',
+      password: '',
+      status: this.loginAuthorization()
     });
   }
   
-  userAuthorization = () => {
+  loginAuthorization = () => {
     if (this.props.user.name) {
       return <Redirect to='/'/>
     } else {

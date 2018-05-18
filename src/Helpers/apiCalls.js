@@ -54,8 +54,8 @@ export const signUp = async (name, email, password) => {
     const user = await response.json();
     return user;
   } else {
-    const error = await {error: 'Username is already taken'};
-    return error;
+    const data = await {data: 'Email is already taken'};
+    return data;
   }
 
 }
