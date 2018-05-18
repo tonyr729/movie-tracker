@@ -29,7 +29,7 @@ class Login extends Component {
       return <Redirect to='/'/>
     } else {
       return (
-        <h2>Error</h2>
+        <h2> {this.props.user} </h2>
       )
     }
   }
