@@ -2,9 +2,10 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './NavBar.css';
 import { connect } from 'react-redux';
+import { logout } from '../../../Actions/actions';
 
 const NavBar = (props) => {
-  console.log(props.user)
+  console.log(props)
   if (!props.user.name) {
     return (
       <header>
@@ -18,8 +19,8 @@ const NavBar = (props) => {
     return (
       <header>
         <NavLink exact to='/' className='nav' activeClassName='selected'>Home</NavLink>
-        <button className='nav'>Sign Out</button>
         <NavLink exact to='/favorites' className='nav' activeClassName='selected'>Favorites</NavLink>         
+        <button className='nav' onClick={props.logout}>Sign Out</button>
       </header>
     )
   }
@@ -29,4 +30,8 @@ const mapStateToProps = (state) => ({
   user: state.user
 })
 
-export default connect(mapStateToProps)(NavBar);
+const mapDispatchToProps = (dispatch) => ({
+  logout: () => dispatch(logout())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(NavBar);
