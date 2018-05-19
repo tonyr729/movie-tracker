@@ -8,13 +8,14 @@ const NavBar = (props) => {
   console.log(props)
   if (!props.user.name) {
     return (
-      <div>
+      <div className='header-container'>
         <header>
           <NavLink exact to='/' className='nav' activeClassName='selected'>Home</NavLink>      
           <NavLink exact to='/login' className='nav' activeClassName='selected'>Log In</NavLink>
           <NavLink exact to='/signup' className='nav' activeClassName='selected'>Sign Up</NavLink>  
           <NavLink exact to='/favorites' className='nav' activeClassName='selected'>Favorites</NavLink>
-        </header> 
+        </header>
+        <h1>Movie Tracker</h1> 
       </div>                      
     )   
   } else {

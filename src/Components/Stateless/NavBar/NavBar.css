@@ -17,11 +17,22 @@
   background-color: rgba(255, 255, 255, 0.3);
   color: #FFF; }
 
-header {
+.header-container {
   background-color: black;
   box-shadow: 2px 0px 20px #130606;
   margin-bottom: 2vh;
+  width: 100vw;
+  display: flex; }
+
+.header-container h1 {
+  color: red;
+  width: 50%;
+  text-align: right;
+  line-height: 2;
+  text-shadow: 1px 1px #1f1f25; }
+
+header {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   padding: 5vh;
-  width: 100vw; }
+  width: 39%; }

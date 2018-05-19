@@ -4,9 +4,9 @@
   display: inline-flex;
   height: 100%;
   justify-content: space-between;
-  margin-left: 5%;
+  margin-left: 4.5%;
   overflow-x: scroll;
-  padding-top: 4vh;
+  padding: 4vh 1vh 0;
   text-align: center;
   width: 90%;
 }
@@ -24,6 +24,30 @@
   margin: 0px 20px 25px;
   padding: 4vh;
   width: 35vh;
+}
+
+.arrows {
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  margin-top: 15%;
+  display: flex;
+  justify-content: space-between;
+}
+
+svg {
+  fill: red;
+}
+
+.left-arrow {
+  width: 8vh;
+  background-size: cover;
+  transform: rotate(180deg);
+}
+
+.right-arrow {
+  width: 8vh;
+  background-size: cover;
 }
 
 .movie-card img {
