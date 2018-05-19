@@ -1,5 +1,5 @@
 import { fetchMovieData } from './apiCalls';
-import {apikey} from './../apikey';
+import {apikey} from '../apicall';
 import DataCleaner from './DataCleaner';
 
 jest.mock('./DataCleaner', () => {

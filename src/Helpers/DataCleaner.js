@@ -1,7 +1,6 @@
 class DataCleaner {
 
   cleanMovies = (data) => {
-    console.log(data)
     const cleanData = data.map(movie => ({
       title: movie.original_title,
       image: movie.poster_path,

@@ -1,4 +1,4 @@
-import { apikey } from '../apikey'
+import { apikey } from '../apicall';
 import DataCleaner from './DataCleaner'
 
 export const fetchMovieData = async () => {
