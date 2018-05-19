@@ -20,7 +20,7 @@ class MovieDisplay extends Component {
 
     const movieDisplay = this.props.movies.map((movie, index) => {
       return (
-        <div key={index} >
+        <div key={index} className='movie-card' >
           <p>{movie.title}</p>
           <img src={`https://image.tmdb.org/t/p/w500${movie.image}`} alt={movie.title}/>
           <button onClick={() => this.props.addFavorites(movie)}>Favorite</button>
@@ -29,13 +29,12 @@ class MovieDisplay extends Component {
     });
 
     return (
-      <div>
+      <div className='movies-container scroll'>
         { movieDisplay }
       </div>
     );
   }
 }
-
 
 const mapStateToProps = (state) => {
   return ({
@@ -50,7 +49,8 @@ const mapDispatchToProps = dispatch => ({
 
 MovieDisplay.propTypes = {
   movies: PropTypes.array,
-  addMovies: PropTypes.func
+  addMovies: PropTypes.func,
+  addFavorites: PropTypes.func
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(MovieDisplay);
