@@ -51,7 +51,7 @@ class Login extends Component {
         <h2> Login to start favoriting movies! </h2>
         <form onSubmit={this.handleSubmit}
           className='login'>
-          <label className='email-label'>Email* 
+          <label className='email-label'>Email
             <input type="text" 
               placeholder='*JohnDoe@gmail.com*'
               onChange={this.handleSignin}
@@ -59,7 +59,7 @@ class Login extends Component {
               name="email"
               className='login-input email-input'/>
           </label>
-          <label className='password-label'>Password* 
+          <label className='password-label'>Password 
             <input type="text" 
               onChange={this.handleSignin}
               value={this.state.password}
