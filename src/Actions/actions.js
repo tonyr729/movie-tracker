@@ -4,8 +4,8 @@ export const addMovies = (movieData) => ({
 });
 
 export const addFavorites = (movie) => ({
-  type: 'ADD_FAVORITE',
-  movie
+    type: 'ADD_FAVORITE',
+    movie
 });
 
 export const login = (user) => ({

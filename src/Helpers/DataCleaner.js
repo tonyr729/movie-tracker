@@ -1,12 +1,13 @@
 class DataCleaner {
 
-  cleanMovies = (data) => {
+  cleanMovies = (data, user) => {
     const cleanData = data.map(movie => ({
+      movie_id: movie.id,
+      user_id: user.id,
       title: movie.original_title,
-      image: movie.poster_path,
-      id: movie.id,
-      releaseDate: movie.release_date,
-      voteAverage: movie.vote_average,
+      poster_path: movie.poster_path,
+      release_date: movie.release_date,
+      vote_average: movie.vote_average,
       overview: movie.overview
     }))
 

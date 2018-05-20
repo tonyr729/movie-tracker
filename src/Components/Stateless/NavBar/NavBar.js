@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import { logout } from '../../../Actions/actions';
 
 const NavBar = (props) => {
-  console.log(props)
   if (!props.user.name) {
     return (
       <div className='header-container'>

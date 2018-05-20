@@ -11,18 +11,20 @@ class MovieDisplay extends Component {
   }
 
   async componentDidMount () {
-    const movieData = await fetchMovieData();
+    const movieData = await fetchMovieData(this.props.user);
     this.props.addMovies(movieData);
   }
 
   render () {
 
     const movieDisplay = this.props.movies.map((movie, index) => {
+      let newMovie = {...movie}
+      
       return (
         <div key={index} className='movie-card' >
           <p>{movie.title}</p>
-          <img src={`https://image.tmdb.org/t/p/w500${movie.image}`} alt={movie.title}/>
-          <button onClick={() => this.props.addFavorites(movie)}>Favorite</button>
+          <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title}/>
+          <button onClick={() => {this.props.addFavorites(newMovie)}}>Favorite</button>
         </div>
       );
     });
@@ -53,7 +55,8 @@ class MovieDisplay extends Component {
 
 const mapStateToProps = (state) => {
   return ({
-    movies: state.movies
+    movies: state.movies,
+    user: state.user
   });
 };
 

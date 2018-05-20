@@ -1,13 +1,15 @@
 import React from 'react';
 import './Favorites.css';
 import { connect } from 'react-redux';
+import { retrieveFavorites } from './../../../Helpers/apiCalls'
 
-const Favorites = ({ favorites }) => {
+const Favorites = ({user, favorites}) => {
+  const favMovies = retrieveFavorites(user.id);
   const favoritesDisplay = favorites.map((movie, index) => {
     return (
       <div key={index} >
         <p>{movie.title}</p>
-        <img src={`https://image.tmdb.org/t/p/w500${movie.image}`} alt={movie.title}/>
+        <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title}/>
       </div>
     );
   });
@@ -20,7 +22,8 @@ const Favorites = ({ favorites }) => {
 
 const mapStateToProps = (state) => {
   return ({
-    favorites: state.favorites
+    favorites: state.favorites,
+    user: state.user
   });
 };
 
