@@ -19,11 +19,14 @@ const NavBar = (props) => {
     )   
   } else {
     return (
-      <header className='header-container'>
-        <NavLink exact to='/' className='nav' activeClassName='selected'>Home</NavLink>
-        <NavLink exact to='/favorites' className='nav' activeClassName='selected'>Favorites</NavLink>         
-        <button className='nav' onClick={props.logout}>Sign Out</button>
-      </header>
+      <div className='header-container'>
+        <header>
+          <NavLink exact to='/' className='nav' activeClassName='selected'>Home</NavLink>
+          <NavLink exact to='/favorites' className='nav' activeClassName='selected'>Favorites</NavLink>         
+          <button className='nav' onClick={props.logout}>Sign Out</button>
+        </header>
+        <h1>Welcome {props.user.name}</h1>         
+      </div>
     )
   }
 }
