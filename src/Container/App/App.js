@@ -14,9 +14,9 @@ class App extends Component {
       <div>
         <Route path='/' component={NavBar} />
         <Route exact path='/' component={MovieDisplay} />
-        <Route exact path='/login' component={Login} />
-        <Route exact path='/signup' component={Signup} />        
-        <Route exact path='/favorites' component={Favorites} />
+        <Route path='/login' component={Login} />
+        <Route path='/signup' component={Signup} />        
+        <Route path='/favorites' component={Favorites} />
       </div>
     );
   }
