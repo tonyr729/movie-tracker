@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import { logout } from '../../../Actions/actions';
 
 const NavBar = (props) => {
-  console.log(props)
   if (!props.user.name) {
     return (
       <div className='header-container'>
@@ -20,7 +19,7 @@ const NavBar = (props) => {
     )   
   } else {
     return (
-      <header>
+      <header className='header-container'>
         <NavLink exact to='/' className='nav' activeClassName='selected'>Home</NavLink>
         <NavLink exact to='/favorites' className='nav' activeClassName='selected'>Favorites</NavLink>         
         <button className='nav' onClick={props.logout}>Sign Out</button>
