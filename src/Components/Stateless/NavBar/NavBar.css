@@ -13,9 +13,16 @@
   color: #ffc65d;
   cursor: pointer; }
 
+  
 .nav:hover {
   background-color: rgba(255, 255, 255, 0.3);
   color: #FFF; }
+  
+.selected,
+.selected:hover {
+  background-color: #ffc65d;
+  color: black;
+}
 
 .header-container {
   background-color: black;
@@ -30,6 +37,8 @@
   text-align: right;
   line-height: 2;
   text-shadow: 1px 1px #1f1f25; }
+
+
 
 header {
   display: flex;

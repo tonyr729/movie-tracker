@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import {signUp} from './../../../Helpers/apiCalls';
-// import { connect } from ''
+import {signUp} from './../../../Helpers/apiCalls'; 
+import './Signup.css';
 
 class Signup extends Component {
   constructor() {
@@ -48,12 +48,14 @@ class Signup extends Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <input type="text" placeholder='Name' name='name' value={this.state.name} onChange={this.handleSignup}/>
-          <input type="text" placeholder='Email' name='email' value={this.state.email} onChange={this.handleSignup}/>
-          <input type="text" placeholder='Password' name='password' value={this.state.password} onChange={this.handleSignup}/>
-          <button>Submit</button>
+      <div className='signup-container'>
+        <h2>Sign Up Here!</h2>
+        <form onSubmit={this.handleSubmit}
+          className='signup'>
+          <input className='signup-input'type="text" placeholder='Name' name='name' value={this.state.name} onChange={this.handleSignup}/>
+          <input className='signup-input'type="text" placeholder='Email' name='email' value={this.state.email} onChange={this.handleSignup}/>
+          <input className='signup-input'type="text" placeholder='Password' name='password' value={this.state.password} onChange={this.handleSignup}/>
+          <button className='signup-button'>Sign Up</button>
         </form>
         <h2>{this.state.status}</h2>
       </div>

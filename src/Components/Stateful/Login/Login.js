@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Login.css';
 import { signIn } from './../../../Helpers/apiCalls';
 import { login } from '../../../Actions/actions';
 import { connect } from 'react-redux';
@@ -46,19 +47,26 @@ class Login extends Component {
   render() {
     
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <input type="text" 
-            placeholder='Email'
-            onChange={this.handleSignin}
-            value={this.state.email}
-            name="email"/>
-          <input type="text" 
-            placeholder='Password'
-            onChange={this.handleSignin}
-            value={this.state.password}
-            name="password"/>
-          <button>Submit</button>
+      <div className='login-container'>
+        <h2> Login to start favoriting movies! </h2>
+        <form onSubmit={this.handleSubmit}
+          className='login'>
+          <label className='email-label'>Email
+            <input type="text" 
+              placeholder='*JohnDoe@gmail.com*'
+              onChange={this.handleSignin}
+              value={this.state.email}
+              name="email"
+              className='login-input email-input'/>
+          </label>
+          <label className='password-label'>Password 
+            <input type="text" 
+              onChange={this.handleSignin}
+              value={this.state.password}
+              name="password"
+              className='login-input'/>
+          </label>
+          <button className='login-button'>Login</button>
         </form>
         { this.state.status }
       </div>
