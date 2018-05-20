@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import MovieDisplay from './../../Components/Stateless/MovieDisplay/MovieDisplay';
 import Login from './../../Components/Stateful/Login/Login';
-import Favorites from './../../Components/Stateless/Favorites/Favorites';
+import Favorites from './../../Components/Stateful/Favorites/Favorites';
 import { Route } from 'react-router-dom';
 import Signup from '../../Components/Stateful/Signup/Signup';
 import NavBar from '../../Components/Stateless/NavBar/NavBar';

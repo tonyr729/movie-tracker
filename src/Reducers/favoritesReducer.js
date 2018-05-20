@@ -1,3 +1,5 @@
+import { postMovieToFavorites } from '../Helpers/apiCalls';
+
 const initialState = [];
 
 export const favoritesReducer = (state = initialState, action) => {
@@ -9,6 +11,7 @@ export const favoritesReducer = (state = initialState, action) => {
         }
       });
       if (!match) {
+        postMovieToFavorites(action.movie)
         return [...state, action.movie];
       }
     // case 'REMOVE_FAVORITE':
