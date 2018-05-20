@@ -10,9 +10,9 @@ const NavBar = (props) => {
       <div className='header-container'>
         <header>
           <NavLink exact to='/' className='nav' activeClassName='selected'>Home</NavLink>      
-          <NavLink exact to='/login' className='nav' activeClassName='selected'>Log In</NavLink>
-          <NavLink exact to='/signup' className='nav' activeClassName='selected'>Sign Up</NavLink>  
-          <NavLink exact to='/favorites' className='nav' activeClassName='selected'>Favorites</NavLink>
+          <NavLink to='/login' className='nav' activeClassName='selected'>Log In</NavLink>
+          <NavLink to='/signup' className='nav' activeClassName='selected'>Sign Up</NavLink>  
+          <NavLink to='/favorites' className='nav' activeClassName='selected'>Favorites</NavLink>
         </header>
         <h1>Movie Tracker</h1> 
       </div>                      
@@ -22,7 +22,7 @@ const NavBar = (props) => {
       <div className='header-container'>
         <header>
           <NavLink exact to='/' className='nav' activeClassName='selected'>Home</NavLink>
-          <NavLink exact to='/favorites' className='nav' activeClassName='selected'>Favorites</NavLink>         
+          <NavLink to='/favorites' className='nav' activeClassName='selected'>Favorites</NavLink>         
           <button className='nav' onClick={props.logout}>Sign Out</button>
         </header>
         <h1>Welcome {props.user.name}</h1>         
