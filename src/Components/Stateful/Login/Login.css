@@ -12,7 +12,7 @@
   justify-content: center;
   align-items: center;
   background-color: #353434;
-  height: 300px;
+  height: 320px;
   width: 600px;
   border-radius: 10px;
 }
@@ -41,14 +41,15 @@ label {
 }
 
 .login-button {
+  margin: 20px 0;
   width: 420px;
-  height: 30px;
+  height: 38px;
   font-size: 18px;
   background-color: #26a566;
   color: white;
-  border-radius: 10px;
+  border-radius: 5px;
   transition: 0.3s;
-  box-shadow: 0 10px 18px rgb(109, 109, 109);
+  box-shadow: 0 10px 18px rgb(73, 68, 68);
   border: none;
   outline: none;
 }
