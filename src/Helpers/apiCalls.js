@@ -91,5 +91,4 @@ export const deleteFavorite = async (userId, movieId) => {
   const response = await fetch(url, {
     method: 'DELETE'
   });
-  
 };
