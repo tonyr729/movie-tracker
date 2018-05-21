@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './Favorites.css';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
+import { deleteFavorite } from '../../../Helpers/apiCalls';
 
 export class Favorites extends Component{
   constructor(props) {
@@ -23,7 +24,7 @@ displayFavorites = () => {
       <div key={index} className='movie-card' >
         <p>{movie.title}</p>
         <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title}/>
-        <button>Remove</button>
+        <button onClick={() => deleteFavorite(this.props.user.id, movie.movie_id)}>Remove</button>
       </div>
     )
   })

@@ -85,3 +85,11 @@ export const retrieveFavorites = async (userId) => {
     return favId;
   }
 }
+
+export const deleteFavorite = async (userId, movieId) => {
+  const url = `http://localhost:3000/api/users/${userId}/favorites/${movieId}`;
+  const response = await fetch(url, {
+    method: 'DELETE'
+  });
+  
+};
