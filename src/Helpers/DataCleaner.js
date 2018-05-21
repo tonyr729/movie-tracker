@@ -14,6 +14,14 @@ class DataCleaner {
     return cleanData;
   }
 
+  cleanFavorites = (data) => {
+    const cleanData= data.map(favorite => ({
+      favoriteId: favorite.movie_id
+    }))
+
+    return cleanData;
+  }
+
 }
 
 export default DataCleaner;
