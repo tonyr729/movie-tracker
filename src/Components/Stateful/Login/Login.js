@@ -36,7 +36,7 @@ class Login extends Component {
     } else {
       return (
         <h2> {this.props.user} </h2>
-      )
+      );
     }
   }
 
