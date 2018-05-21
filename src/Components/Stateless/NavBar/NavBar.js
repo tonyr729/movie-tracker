@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import './NavBar.css';
 import { connect } from 'react-redux';
 import { logout } from '../../../Actions/actions';
+import PropTypes from 'prop-types';
 
 const NavBar = (props) => {
   if (!props.user.name) {
@@ -37,5 +38,10 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   logout: () => dispatch(logout())
 });
+
+NavBar.propTypes = {
+  user: PropTypes.obj,
+  logout: PropTypes.func
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(NavBar);
