@@ -73,8 +73,10 @@ const mapDispatchToProps = dispatch => ({
 });
 
 MovieDisplay.propTypes = {
-  movies: PropTypes.array,
-  addMovies: PropTypes.func,
+  movies: PropTypes.array.isRequired,
+  favorites: PropTypes.array,
+  user: PropTypes.obj,
+  addMovies: PropTypes.func.isRequired,
   addFavorites: PropTypes.func
 };
 

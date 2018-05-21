@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { deleteFavorite } from '../../../Helpers/apiCalls';
 import { removeFavorite } from '../../../Actions/actions';
+import PropTypes from 'prop-types';
 
 export class Favorites extends Component{
   constructor(props) {
@@ -58,5 +59,12 @@ export const mapStateToProps = (state) => {
 export const mapDispatchToProps = (dispatch) => ({
   removeFavorite: (movie) => dispatch(removeFavorite(movie))
 })
+
+Favorites.propTypes = {
+  user: PropTypes.obj,
+  favorites: PropTypes.array,
+  movies: PropTypes.array,
+  removeFavorite: PropTypes.func
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Favorites);

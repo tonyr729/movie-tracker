@@ -4,6 +4,8 @@ import { signIn, retrieveFavorites} from './../../../Helpers/apiCalls';
 import { login, addFavorites } from '../../../Actions/actions';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
+import PropTypes from 'prop-types';
+
 
 class Login extends Component {
   constructor() {
@@ -88,5 +90,11 @@ const mapDispatchToProps = (dispatch) => ({
   login: (user) => dispatch(login(user)),
   addFavorites: (movies) => dispatch(addFavorites(movies))
 })
+
+Login.propTypes = {
+  user: PropTypes.obj,
+  login: PropTypes.func,
+  addFavorites: PropTypes.func
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);
