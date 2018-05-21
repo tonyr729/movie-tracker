@@ -3,6 +3,7 @@ import './Favorites.css';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { deleteFavorite } from '../../../Helpers/apiCalls';
+import { removeFavorite } from '../../../Actions/actions';
 
 export class Favorites extends Component{
   constructor(props) {
@@ -17,6 +18,12 @@ convertFavorites = () => {
   return foundFavorites;
 }
 
+updateFavoritesOnDelete = (movie) => {
+  deleteFavorite(this.props.user.id, movie.movie_id);
+  this.props.removeFavorite(movie)
+
+}
+
 displayFavorites = () => {
   const favorites = this.convertFavorites();
   const renderedFavorites = favorites.map((movie, index) => {
@@ -24,7 +31,7 @@ displayFavorites = () => {
       <div key={index} className='movie-card' >
         <p>{movie.title}</p>
         <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title}/>
-        <button onClick={() => deleteFavorite(this.props.user.id, movie.movie_id)}>Remove</button>
+        <button onClick={() => this.updateFavoritesOnDelete(movie)}>Remove</button>
       </div>
     )
   })
@@ -48,4 +55,8 @@ export const mapStateToProps = (state) => {
   });
 };
 
-export default connect(mapStateToProps)(Favorites);
+export const mapDispatchToProps = (dispatch) => ({
+  removeFavorite: (movie) => dispatch(removeFavorite(movie))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Favorites);

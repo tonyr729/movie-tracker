@@ -4,8 +4,13 @@ export const addMovies = (movieData) => ({
 });
 
 export const addFavorites = (movies) => ({
-    type: 'ADD_FAVORITE',
-    movies
+  type: 'ADD_FAVORITE',
+  movies
+});
+
+export const removeFavorite = (movie) => ({
+  type: 'REMOVE_FAVORITE',
+  movie
 });
 
 export const login = (user) => ({
