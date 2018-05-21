@@ -30,11 +30,11 @@ class Login extends Component {
   loginAuthorization = () => {
     if (this.props.user.name) {
       this.addFavorites();
-      return <Redirect to='/'/>
+      return <Redirect to='/'/>;
     } else {
       return (
         <h2> {this.props.user} </h2>
-      )
+      );
     }
   }
 
@@ -47,7 +47,7 @@ class Login extends Component {
     const {name, value} = event.target;
     this.setState({
       [name]: value
-    })
+    });
   }
 
   render() {
@@ -82,11 +82,11 @@ class Login extends Component {
 
 const mapStateToProps = (state) => ({
   user: state.user
-}) 
+}); 
 
 const mapDispatchToProps = (dispatch) => ({
   login: (user) => dispatch(login(user)),
   addFavorites: (movies) => dispatch(addFavorites(movies))
-})
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);
