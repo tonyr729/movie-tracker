@@ -59,31 +59,35 @@ export const signUp = async (name, email, password) => {
   }
 }
 
-export const postMovieToFavorites = async (movie) => {
+export const postMovieToFavorites = async (movie, favorites) => {
   const url = 'http://localhost:3000/api/users/favorites/new';
   const newMovie = JSON.stringify(movie);
-  const response  = await fetch(url, {
-    method: 'POST', 
-    body: newMovie,
-    headers: new Headers({
-      'Content-Type': 'application/json'
+  const match = favorites.find(favorite => favorite.favoriteId === movie.movie_id )
+  if (!match) {
+    const response  = await fetch(url, {
+      method: 'POST', 
+      body: newMovie,
+      headers: new Headers({
+        'Content-Type': 'application/json'
+      })
     })
-  })
-  if (response.ok) {
-    const status = await response.json();
-    return status;
-  } else {
-    const status = response.statusText
-    return status;
+    if (response.ok) {
+      const status = await response.json();
+      return status;
+    } else {
+      const status = response.statusText
+      return status;
+    }
   }
 }
 
 export const retrieveFavorites = async (userId) => {
-  console.log('heree')
+  const cleaner = new DataCleaner();
   const url = `http://localhost:3000/api/users/${userId}/favorites`
   const response = await fetch(url);
   if (response.ok) {
     const favorites = await response.json()
-    return favorites;
+    const favId = await cleaner.cleanFavorites(favorites.data)
+    return favId;
   }
 }
