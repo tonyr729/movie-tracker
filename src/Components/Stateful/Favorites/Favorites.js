@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import './Favorites.css';
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
 import { deleteFavorite } from '../../../Helpers/apiCalls';
 import { removeFavorite } from '../../../Actions/actions';
 import PropTypes from 'prop-types';
@@ -66,5 +65,6 @@ Favorites.propTypes = {
   movies: PropTypes.array,
   removeFavorite: PropTypes.func
 };
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(Favorites);
