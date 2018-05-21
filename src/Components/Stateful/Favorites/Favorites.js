@@ -1,18 +1,17 @@
 import React, {Component} from 'react';
 import './Favorites.css';
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
 import { deleteFavorite } from '../../../Helpers/apiCalls';
 import { removeFavorite } from '../../../Actions/actions';
 
 export class Favorites extends Component{
   constructor(props) {
-    super(props)
+    super(props);
   }
 
 convertFavorites = () => {
   const foundFavorites = this.props.favorites.map((favorite) => {
-    const matchedMovie = this.props.movies.find(movie => movie.movie_id === favorite.favoriteId)
+    const matchedMovie = this.props.movies.find(movie => movie.movie_id === favorite.favoriteId);
     return matchedMovie;
   });
   return foundFavorites;
@@ -20,7 +19,7 @@ convertFavorites = () => {
 
 updateFavoritesOnDelete = (movie) => {
   deleteFavorite(this.props.user.id, movie.movie_id);
-  this.props.removeFavorite(movie)
+  this.props.removeFavorite(movie);
 
 }
 
@@ -33,8 +32,8 @@ displayFavorites = () => {
         <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title}/>
         <button onClick={() => this.updateFavoritesOnDelete(movie)}>Remove</button>
       </div>
-    )
-  })
+    );
+  });
   return renderedFavorites;
 }
 
@@ -45,7 +44,7 @@ render () {
     </div>
   );
 } 
-};
+}
 
 export const mapStateToProps = (state) => {
   return ({
@@ -57,6 +56,6 @@ export const mapStateToProps = (state) => {
 
 export const mapDispatchToProps = (dispatch) => ({
   removeFavorite: (movie) => dispatch(removeFavorite(movie))
-})
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Favorites);
