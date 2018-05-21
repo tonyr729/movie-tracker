@@ -71,13 +71,7 @@ export const postMovieToFavorites = async (movie, favorites) => {
         'Content-Type': 'application/json'
       })
     })
-    if (response.ok) {
-      const status = await response.json();
-      return status;
-    } else {
-      const status = response.statusText
-      return status;
-    }
+
   }
 }
 

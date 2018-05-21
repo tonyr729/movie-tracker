@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Login.css';
-import { signIn } from './../../../Helpers/apiCalls';
-import { login } from '../../../Actions/actions';
+import { signIn, retrieveFavorites} from './../../../Helpers/apiCalls';
+import { login, addFavorites } from '../../../Actions/actions';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
@@ -29,12 +29,18 @@ class Login extends Component {
   
   loginAuthorization = () => {
     if (this.props.user.name) {
+      this.addFavorites();
       return <Redirect to='/'/>
     } else {
       return (
         <h2> {this.props.user} </h2>
       )
     }
+  }
+
+  addFavorites = async () => {
+    const userFavorites = await retrieveFavorites(this.props.user.id);
+    this.props.addFavorites(userFavorites);
   }
 
   handleSignin = (event) => {
@@ -79,7 +85,8 @@ const mapStateToProps = (state) => ({
 }) 
 
 const mapDispatchToProps = (dispatch) => ({
-  login: (user) => dispatch(login(user)) 
+  login: (user) => dispatch(login(user)),
+  addFavorites: (movies) => dispatch(addFavorites(movies))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);
