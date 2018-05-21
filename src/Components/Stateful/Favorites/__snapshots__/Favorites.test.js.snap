@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Favorites component matches snapshot 1`] = `
+<div
+  className="movies-container scroll"
+>
+  <div
+    className="movie-card"
+  >
+    <p>
+      Batman
+    </p>
+    <img
+      alt="Batman"
+      src="https://image.tmdb.org/t/p/w500undefined"
+    />
+    <button>
+      Remove
+    </button>
+  </div>
+</div>
+`;
