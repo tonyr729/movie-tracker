@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {fetchMovieData} from './../../../Helpers/apiCalls';
+import {fetchMovieData, postMovieToFavorites, retrieveFavorites} from './../../../Helpers/apiCalls';
 import './MovieDisplay.css';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -15,6 +15,12 @@ class MovieDisplay extends Component {
     this.props.addMovies(movieData);
   }
 
+  async updateFavorites (movie) {
+    const userFavorites = await retrieveFavorites(this.props.user.id);
+    this.props.addFavorites(userFavorites);
+    postMovieToFavorites(movie, this.props.favorites)
+  }
+  
   render () {
 
     const movieDisplay = this.props.movies.map((movie, index) => {
@@ -24,7 +30,7 @@ class MovieDisplay extends Component {
         <div key={index} className='movie-card' >
           <p>{movie.title}</p>
           <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title}/>
-          <button onClick={() => {this.props.addFavorites(newMovie)}}>Favorite</button>
+          <button onClick={() => this.updateFavorites(movie)}>Favorite</button>
         </div>
       );
     });
@@ -56,6 +62,7 @@ class MovieDisplay extends Component {
 const mapStateToProps = (state) => {
   return ({
     movies: state.movies,
+    favorites: state.favorites,
     user: state.user
   });
 };
