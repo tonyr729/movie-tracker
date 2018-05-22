@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import {fetchMovieData, postMovieToFavorites, retrieveFavorites} from './../../../Helpers/apiCalls';
+import {fetchMovieData, postMovieToFavorites, retrieveFavorites, deleteFavorite} from './../../../Helpers/apiCalls';
 import './MovieDisplay.css';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { addMovies, addFavorites } from './../../../Actions/actions';
+import { addMovies, addFavorites, removeFavorite} from './../../../Actions/actions';
 
 class MovieDisplay extends Component {
   constructor() {
@@ -16,21 +16,31 @@ class MovieDisplay extends Component {
   }
 
   async updateFavorites (movie) {
-    const userFavorites = await retrieveFavorites(this.props.user.id);
-    this.props.addFavorites(userFavorites);
-    postMovieToFavorites(movie, this.props.favorites);
+    const match = this.props.favorites.find(favorite => movie.movie_id === favorite.favoriteId)
+    if (!match) {
+      postMovieToFavorites(movie, this.props.favorites);
+      const userFavorites = await retrieveFavorites(this.props.user.id);
+      const newFavorites = [...userFavorites, {favoriteId: movie.movie_id}]
+      this.props.addFavorites(newFavorites);
+      console.log('adding')
+    } else {
+      deleteFavorite(this.props.user.id, movie.movie_id);
+      this.props.removeFavorite(movie);
+      console.log('removing')
+    }
   }
   
   render () {
 
     const movieDisplay = this.props.movies.map((movie, index) => {
-      let newMovie = {...movie};
-      
+      const favorite = this.props.favorites.find(favorite => favorite.favoriteId === movie.movie_id)      
       return (
-        <div key={index} className='movie-card' >
+
+        <div key={index} className={favorite ? 'favorite-card' : 'movie-card'} >
           <p className='movie-title'>{movie.title}</p>
-          <img className='movie-poster' src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title}/>
-          <button className='fav-button' onClick={() => this.updateFavorites(movie)}>Favorite</button>
+           <img className='movie-poster' src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title}/>
+          <button className='fav-button' onClick={() => this.updateFavorites(movie)}>{favorite ? 'Delete' : 'Favorite'}</button>
+
         </div>
       );
     });
@@ -69,7 +79,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => ({
   addMovies: (movieData) => dispatch(addMovies(movieData)),
-  addFavorites: (movie) => dispatch(addFavorites(movie))
+  addFavorites: (movie) => dispatch(addFavorites(movie)),
+  removeFavorite: (movie) => dispatch(removeFavorite(movie))
 });
 
 MovieDisplay.propTypes = {

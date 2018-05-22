@@ -11,7 +11,7 @@
   width: 90%;
   border-radius: 5px; }
 
-.movie-title {
+.movie-card, .favorite-card p {
   color: #ECE9E6;
   font-size: 21px;
   margin: 0 auto 10px; }
@@ -66,6 +66,17 @@ svg {
   background-size: cover; }
 
 .movie-card img {
+  width: inherit; }
+
+.favorite-card {
+  background-color: #6d0404;
+  box-shadow: 2px 0px 20px #cecccc;
+  box-sizing: content-box;
+  margin: 0px 20px 25px;
+  padding: 4vh;
+  width: 35vh; }
+
+.favorite-card img {
   width: inherit; }
 
 .scroll::-webkit-scrollbar {
