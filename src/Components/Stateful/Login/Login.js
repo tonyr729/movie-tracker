@@ -68,7 +68,7 @@ class Login extends Component {
               className='login-input email-input'/>
           </label>
           <label className='password-label'>Password 
-            <input type="text" 
+            <input type="password" 
               onChange={this.handleSignin}
               value={this.state.password}
               name="password"
