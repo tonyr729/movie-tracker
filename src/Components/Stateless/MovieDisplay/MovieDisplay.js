@@ -3,7 +3,7 @@ import {fetchMovieData, postMovieToFavorites, retrieveFavorites, deleteFavorite}
 import './MovieDisplay.css';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { addMovies, addFavorites, removeFavorite} from './../../../Actions/actions';
+import { addMovies, addFavorites, removeFavorite } from './../../../Actions/actions';
 
 class MovieDisplay extends Component {
   constructor() {
@@ -38,7 +38,7 @@ class MovieDisplay extends Component {
 
         <div key={index} className={favorite ? 'favorite-card' : 'movie-card'} >
           <p className='movie-title'>{movie.title}</p>
-           <img className='movie-poster' src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title}/>
+          <img className='movie-poster' src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title}/>
           <button className='fav-button' onClick={() => this.updateFavorites(movie)}>{favorite ? 'Delete' : 'Favorite'}</button>
 
         </div>
