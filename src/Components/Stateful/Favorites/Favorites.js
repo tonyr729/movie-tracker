@@ -16,14 +16,6 @@ export class Favorites extends Component{
     }
   }
 
-  convertFavorites = () => {
-    const foundFavorites = this.props.favorites.map((favorite) => {
-      const matchedMovie = this.props.movies.find(movie => movie.movie_id === favorite.favoriteId);
-      return matchedMovie;
-    });
-    return foundFavorites;
-  }
-
   componentWillReceiveProps(){
     this.displayFavorites()
   }

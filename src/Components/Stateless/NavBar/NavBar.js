@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { logout } from '../../../Actions/actions';
 import PropTypes from 'prop-types';
 
-const NavBar = (props) => {
+export const NavBar = (props) => {
   if (!props.user.name) {
     return (
       <div className='header-container'>
@@ -19,7 +19,7 @@ const NavBar = (props) => {
     );   
   } else {
     return (
-      <div className='header-container'>
+      <div className='header-container user-logged-in'>
         <header>
           <NavLink exact to='/' className='nav' activeClassName='selected'>Home</NavLink>
           <NavLink to='/favorites' className='nav' activeClassName='selected'>Favorites</NavLink>         
@@ -31,11 +31,11 @@ const NavBar = (props) => {
   }
 };
 
-const mapStateToProps = (state) => ({
+export const mapStateToProps = (state) => ({
   user: state.user
 });
 
-const mapDispatchToProps = (dispatch) => ({
+export const mapDispatchToProps = (dispatch) => ({
   logout: () => dispatch(logout())
 });
 

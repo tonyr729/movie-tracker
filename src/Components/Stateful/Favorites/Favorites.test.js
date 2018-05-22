@@ -1,7 +1,7 @@
 import renderer from 'react-test-renderer';
 import { shallow } from 'enzyme';
 import React from 'react';
-import { Favorites, mapStateToProps } from './Favorites';
+import { Favorites, mapStateToProps, mapDispatchToProps } from './Favorites';
 import { removeFavorite } from '../../../Actions/actions';
 
 describe('Favorites', () => {
@@ -28,6 +28,17 @@ describe('Favorites', () => {
     });
   });
 
+  describe('component will receive props', () => {
+
+    it('should call displayFavorites', () => {
+
+      favorites.instance().displayFavorites = jest.fn()
+      favorites.instance().componentWillReceiveProps()
+
+      expect(favorites.instance().displayFavorites).toHaveBeenCalled()
+    })
+  })
+
   describe('displayFavorites', () => {
 
     it('should only display matched favorites', () => {
@@ -44,15 +55,12 @@ describe('Favorites', () => {
 
     it('calls delete favorite with the correct params', async () => {
       
-      const expected = 2;
-      const movie = {movie_id: 2};
-      window.fetch = jest.fn();
-      const deleteFav = deleteFavorite;
-      const deleteFavorite = jest.fn();
-      
-      favorites.instance().updateFavoritesOnDelete(movie);
+      const movie = {favoriteId: 1};
 
-      expect(deleteFavorite).toHaveBeenCalled();
+      window.fetch = jest.fn();
+
+      favorites.instance().updateFavoritesOnDelete(movie);
+      expect(mockProps.removeFavorite).toHaveBeenCalledWith(movie);
     });
   });
 
@@ -78,4 +86,21 @@ describe('Favorites', () => {
 
     });
   });
+
+  describe('mapDispatchToProps', () => {
+
+    it('should call dispatch with the correct params', () => {
+
+      const mockDispatch = jest.fn();
+      const movie = {movie_id: 1, title:'Batman'}
+      const mappedProps = mapDispatchToProps(mockDispatch);
+      const mockAction = {
+        type: 'REMOVE_FAVORITE',
+        movie
+      };
+      
+      mappedProps.removeFavorite(movie);
+      expect(mockDispatch).toHaveBeenCalledWith(mockAction);
+    })
+  })
 });
