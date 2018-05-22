@@ -58,15 +58,8 @@ export class Favorites extends Component{
 
   render () {
     return (
-
-      <div key={index} className='movie-card' >
-        <p>{movie.title}</p>
-        <img className='movie-poster' src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title}/>
-        <button className='fav-button' onClick={() => this.updateFavoritesOnDelete(movie)}>Remove</button>
-
       <div className='movies-container scroll'>
         {this.displayFavorites()}
-
       </div>
     );
   } 
