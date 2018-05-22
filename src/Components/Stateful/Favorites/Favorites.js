@@ -69,5 +69,4 @@ Favorites.propTypes = {
   removeFavorite: PropTypes.func
 };
 
-
 export default connect(mapStateToProps, mapDispatchToProps)(Favorites);
