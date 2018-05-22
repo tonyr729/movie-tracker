@@ -16,41 +16,60 @@ export class Favorites extends Component{
     }
   }
 
-convertFavorites = () => {
-  const foundFavorites = this.props.favorites.map((favorite) => {
-    const matchedMovie = this.props.movies.find(movie => movie.movie_id === favorite.favoriteId);
-    return matchedMovie;
-  });
-  return foundFavorites;
-}
+  convertFavorites = () => {
+    const foundFavorites = this.props.favorites.map((favorite) => {
+      const matchedMovie = this.props.movies.find(movie => movie.movie_id === favorite.favoriteId);
+      return matchedMovie;
+    });
+    return foundFavorites;
+  }
 
-updateFavoritesOnDelete = (movie) => {
-  deleteFavorite(this.props.user.id, movie.movie_id);
-  this.props.removeFavorite(movie);
+  componentWillReceiveProps(){
+    this.displayFavorites()
+  }
 
-}
 
-displayFavorites = () => {
-  const favorites = this.convertFavorites();
-  const renderedFavorites = favorites.map((movie, index) => {
+  updateFavoritesOnDelete = (movie) => {
+    deleteFavorite(this.props.user.id, movie.movie_id);
+    this.props.removeFavorite(movie);
+  }
+
+  convertFavorites = () => {
+    const foundFavorites = this.props.favorites.map((favorite) => {
+      const matchedMovie = this.props.movies.find(movie => movie.movie_id === favorite.favoriteId);
+      return matchedMovie;
+    });
+    return foundFavorites;
+  }
+
+  displayFavorites = () => {
+    const favorites = this.convertFavorites();
+    const renderedFavorites = favorites.map((movie, index) => {
+      return (
+        <div key={index} className='movie-card' >
+          <p>{movie.title}</p>
+          <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title}/>
+          <button onClick={() => this.updateFavoritesOnDelete(movie)}>Remove</button>
+        </div>
+      );
+    });
+    return renderedFavorites;
+  }
+
+  render () {
     return (
+
       <div key={index} className='movie-card' >
         <p>{movie.title}</p>
         <img className='movie-poster' src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title}/>
         <button className='fav-button' onClick={() => this.updateFavoritesOnDelete(movie)}>Remove</button>
+
+      <div className='movies-container scroll'>
+        {this.displayFavorites()}
+
       </div>
     );
-  });
-  return renderedFavorites;
-}
-
-render () {
-  return (
-    <div className='movies-container scroll'>
-      {this.displayFavorites()}
-    </div>
-  );
-} 
+  } 
 }
 
 export const mapStateToProps = (state) => {
@@ -71,6 +90,5 @@ Favorites.propTypes = {
   movies: PropTypes.array,
   removeFavorite: PropTypes.func
 };
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(Favorites);
