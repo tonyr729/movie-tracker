@@ -10,9 +10,24 @@ export class Favorites extends Component{
     super(props);
   }
 
+  componentDidMount() {
+    if (!this.props.user.name) {
+      this.props.history.push('/');
+    }
+  }
+
+  convertFavorites = () => {
+    const foundFavorites = this.props.favorites.map((favorite) => {
+      const matchedMovie = this.props.movies.find(movie => movie.movie_id === favorite.favoriteId);
+      return matchedMovie;
+    });
+    return foundFavorites;
+  }
+
   componentWillReceiveProps(){
     this.displayFavorites()
   }
+
 
   updateFavoritesOnDelete = (movie) => {
     deleteFavorite(this.props.user.id, movie.movie_id);
@@ -43,8 +58,15 @@ export class Favorites extends Component{
 
   render () {
     return (
+
+      <div key={index} className='movie-card' >
+        <p>{movie.title}</p>
+        <img className='movie-poster' src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title}/>
+        <button className='fav-button' onClick={() => this.updateFavoritesOnDelete(movie)}>Remove</button>
+
       <div className='movies-container scroll'>
         {this.displayFavorites()}
+
       </div>
     );
   } 
