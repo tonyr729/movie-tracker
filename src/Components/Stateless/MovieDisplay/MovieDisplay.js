@@ -35,10 +35,12 @@ class MovieDisplay extends Component {
     const movieDisplay = this.props.movies.map((movie, index) => {
       const favorite = this.props.favorites.find(favorite => favorite.favoriteId === movie.movie_id)      
       return (
+
         <div key={index} className={favorite ? 'favorite-card' : 'movie-card'} >
-          <p>{movie.title}</p>
-          <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title}/>
-          <button onClick={() => this.updateFavorites(movie)}>{favorite ? 'Delete' : 'Favorite'}</button>
+          <p className='movie-title'>{movie.title}</p>
+           <img className='movie-poster' src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title}/>
+          <button className='fav-button' onClick={() => this.updateFavorites(movie)}>{favorite ? 'Delete' : 'Favorite'}</button>
+
         </div>
       );
     });

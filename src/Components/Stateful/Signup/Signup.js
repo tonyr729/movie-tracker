@@ -52,9 +52,15 @@ class Signup extends Component {
         <h2>Sign Up Here!</h2>
         <form onSubmit={this.handleSubmit}
           className='signup'>
-          <input className='signup-input'type="text" placeholder='Name' name='name' value={this.state.name} onChange={this.handleSignup}/>
-          <input className='signup-input'type="text" placeholder='Email' name='email' value={this.state.email} onChange={this.handleSignup}/>
-          <input className='signup-input'type="text" placeholder='Password' name='password' value={this.state.password} onChange={this.handleSignup}/>
+          <label>Name
+            <input className='signup-input name'type="text" name='name' value={this.state.name} onChange={this.handleSignup}/>
+          </label>
+          <label>Email
+            <input className='signup-input email'type="text" name='email' value={this.state.email} onChange={this.handleSignup}/>
+          </label>
+          <label>Password
+            <input className='signup-input'type="text" name='password' value={this.state.password} onChange={this.handleSignup}/>
+          </label>
           <button className='signup-button'>Sign Up</button>
         </form>
         <h2>{this.state.status}</h2>
