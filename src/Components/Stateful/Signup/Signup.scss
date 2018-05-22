@@ -12,10 +12,9 @@
   justify-content: center;
   align-items: center;
   background-color: #353434;
-  height: 320px;
+  height: 400px;
   width: 600px;
   border-radius: 10px;
-  padding: 80px 0;
 }
 
 .signup-input {
@@ -28,9 +27,17 @@
   font-size: 20px;
 }
 
+.name {
+  margin-left: 42px;
+}
+
+.email {
+  margin-left: 46px;
+}
+
 .signup-button {
   margin: 20px 0;
-  width: 310px;
+  width: 413px;
   height: 38px;
   font-size: 18px;
   background-color: #26a566;
