@@ -1,5 +1,3 @@
-import { postMovieToFavorites } from '../Helpers/apiCalls';
-
 const initialState = [];
 
 export const favoritesReducer = (state = initialState, action) => {
@@ -7,9 +5,8 @@ export const favoritesReducer = (state = initialState, action) => {
     case 'ADD_FAVORITE':
       return action.movies;
     case 'REMOVE_FAVORITE':
-      const newState = state.filter(movie => movie.favoriteId !== action.movie.movie_id)
-      console.log(newState)
-      return newState
+      const newState = state.filter(movie => movie.favoriteId !== action.movie.movie_id);
+      return newState;
     default: 
       return state;
   }

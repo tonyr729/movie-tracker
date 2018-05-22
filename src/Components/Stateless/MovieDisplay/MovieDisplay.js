@@ -18,13 +18,13 @@ class MovieDisplay extends Component {
   async updateFavorites (movie) {
     const userFavorites = await retrieveFavorites(this.props.user.id);
     this.props.addFavorites(userFavorites);
-    postMovieToFavorites(movie, this.props.favorites)
+    postMovieToFavorites(movie, this.props.favorites);
   }
   
   render () {
 
     const movieDisplay = this.props.movies.map((movie, index) => {
-      let newMovie = {...movie}
+      let newMovie = {...movie};
       
       return (
         <div key={index} className='movie-card' >

@@ -16,7 +16,7 @@ const NavBar = (props) => {
         </header>
         <h1>Movie Tracker</h1> 
       </div>                      
-    )   
+    );   
   } else {
     return (
       <div className='header-container'>
@@ -27,17 +27,17 @@ const NavBar = (props) => {
         </header>
         <h1>Welcome {props.user.name}</h1>         
       </div>
-    )
+    );
   }
-}
+};
 
 const mapStateToProps = (state) => ({
   user: state.user
-})
+});
 
 const mapDispatchToProps = (dispatch) => ({
   logout: () => dispatch(logout())
-})
+});
 
 NavBar.propTypes = {
   user: PropTypes.obj,
