@@ -14,7 +14,9 @@ exports[`Favorites component matches snapshot 1`] = `
       alt="Batman"
       src="https://image.tmdb.org/t/p/w500undefined"
     />
-    <button>
+    <button
+      onClick={[Function]}
+    >
       Remove
     </button>
   </div>

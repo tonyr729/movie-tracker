@@ -2,6 +2,7 @@ import renderer from 'react-test-renderer';
 import { shallow } from 'enzyme';
 import React from 'react';
 import { Favorites, mapStateToProps } from './Favorites';
+import { removeFavorite } from '../../../Actions/actions';
 
 describe('Favorites', () => {
   
@@ -13,7 +14,8 @@ describe('Favorites', () => {
     mockProps = {
       user: {},
       favorites: [{favoriteId: 1}],
-      movies: [{movie_id: 4, title: 'Spiderman'}, {movie_id: 1, title:'Batman'}]
+      movies: [{movie_id: 4, title: 'Spiderman'}, {movie_id: 1, title:'Batman'}],
+      removeFavorite: jest.fn()
     };
 
     favorites = shallow(<Favorites {...mockProps} />, { disableLifecycleMethods: true });
@@ -35,6 +37,22 @@ describe('Favorites', () => {
       expect(favorites.instance().convertFavorites()).toEqual(expected)
 
 
+    });
+  });
+
+  describe('updateFavoritesOnDelete', () => {
+
+    it('calls delete favorite with the correct params', async () => {
+      
+      const expected = 2;
+      const movie = {movie_id: 2};
+      window.fetch = jest.fn();
+      const deleteFav = deleteFavorite;
+      const deleteFavorite = jest.fn();
+      
+      favorites.instance().updateFavoritesOnDelete(movie);
+
+      expect(deleteFavorite).toHaveBeenCalled();
     });
   });
 
