@@ -1,0 +1,434 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`login Component matches snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Login
+    addFavorites={[Function]}
+    login={[Function]}
+    user={
+        Object {
+            "name": "Jack",
+          }
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <h2>
+           Login to start favoriting movies! 
+</h2>,
+        <form
+          className="login"
+          onSubmit={[Function]}
+>
+          <label
+                    className="email-label"
+          >
+                    Email
+                    <input
+                              className="login-input email-input"
+                              name="email"
+                              onChange={[Function]}
+                              placeholder="*JohnDoe@gmail.com*"
+                              type="text"
+                              value=""
+                    />
+          </label>
+          <label
+                    className="password-label"
+          >
+                    Password
+                    <input
+                              className="login-input"
+                              name="password"
+                              onChange={[Function]}
+                              type="password"
+                              value=""
+                    />
+          </label>
+          <button
+                    className="login-button"
+          >
+                    Login
+          </button>
+</form>,
+        "",
+      ],
+      "className": "login-container",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": " Login to start favoriting movies! ",
+        },
+        "ref": null,
+        "rendered": " Login to start favoriting movies! ",
+        "type": "h2",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <label
+              className="email-label"
+>
+              Email
+              <input
+                            className="login-input email-input"
+                            name="email"
+                            onChange={[Function]}
+                            placeholder="*JohnDoe@gmail.com*"
+                            type="text"
+                            value=""
+              />
+</label>,
+            <label
+              className="password-label"
+>
+              Password
+              <input
+                            className="login-input"
+                            name="password"
+                            onChange={[Function]}
+                            type="password"
+                            value=""
+              />
+</label>,
+            <button
+              className="login-button"
+>
+              Login
+</button>,
+          ],
+          "className": "login",
+          "onSubmit": [Function],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "Email",
+                <input
+                  className="login-input email-input"
+                  name="email"
+                  onChange={[Function]}
+                  placeholder="*JohnDoe@gmail.com*"
+                  type="text"
+                  value=""
+/>,
+              ],
+              "className": "email-label",
+            },
+            "ref": null,
+            "rendered": Array [
+              "Email",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "className": "login-input email-input",
+                  "name": "email",
+                  "onChange": [Function],
+                  "placeholder": "*JohnDoe@gmail.com*",
+                  "type": "text",
+                  "value": "",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "input",
+              },
+            ],
+            "type": "label",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "Password",
+                <input
+                  className="login-input"
+                  name="password"
+                  onChange={[Function]}
+                  type="password"
+                  value=""
+/>,
+              ],
+              "className": "password-label",
+            },
+            "ref": null,
+            "rendered": Array [
+              "Password",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "className": "login-input",
+                  "name": "password",
+                  "onChange": [Function],
+                  "type": "password",
+                  "value": "",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "input",
+              },
+            ],
+            "type": "label",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Login",
+              "className": "login-button",
+            },
+            "ref": null,
+            "rendered": "Login",
+            "type": "button",
+          },
+        ],
+        "type": "form",
+      },
+      "",
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <h2>
+             Login to start favoriting movies! 
+</h2>,
+          <form
+            className="login"
+            onSubmit={[Function]}
+>
+            <label
+                        className="email-label"
+            >
+                        Email
+                        <input
+                                    className="login-input email-input"
+                                    name="email"
+                                    onChange={[Function]}
+                                    placeholder="*JohnDoe@gmail.com*"
+                                    type="text"
+                                    value=""
+                        />
+            </label>
+            <label
+                        className="password-label"
+            >
+                        Password
+                        <input
+                                    className="login-input"
+                                    name="password"
+                                    onChange={[Function]}
+                                    type="password"
+                                    value=""
+                        />
+            </label>
+            <button
+                        className="login-button"
+            >
+                        Login
+            </button>
+</form>,
+          "",
+        ],
+        "className": "login-container",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": " Login to start favoriting movies! ",
+          },
+          "ref": null,
+          "rendered": " Login to start favoriting movies! ",
+          "type": "h2",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <label
+                className="email-label"
+>
+                Email
+                <input
+                                className="login-input email-input"
+                                name="email"
+                                onChange={[Function]}
+                                placeholder="*JohnDoe@gmail.com*"
+                                type="text"
+                                value=""
+                />
+</label>,
+              <label
+                className="password-label"
+>
+                Password
+                <input
+                                className="login-input"
+                                name="password"
+                                onChange={[Function]}
+                                type="password"
+                                value=""
+                />
+</label>,
+              <button
+                className="login-button"
+>
+                Login
+</button>,
+            ],
+            "className": "login",
+            "onSubmit": [Function],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "Email",
+                  <input
+                    className="login-input email-input"
+                    name="email"
+                    onChange={[Function]}
+                    placeholder="*JohnDoe@gmail.com*"
+                    type="text"
+                    value=""
+/>,
+                ],
+                "className": "email-label",
+              },
+              "ref": null,
+              "rendered": Array [
+                "Email",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "login-input email-input",
+                    "name": "email",
+                    "onChange": [Function],
+                    "placeholder": "*JohnDoe@gmail.com*",
+                    "type": "text",
+                    "value": "",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "input",
+                },
+              ],
+              "type": "label",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "Password",
+                  <input
+                    className="login-input"
+                    name="password"
+                    onChange={[Function]}
+                    type="password"
+                    value=""
+/>,
+                ],
+                "className": "password-label",
+              },
+              "ref": null,
+              "rendered": Array [
+                "Password",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "login-input",
+                    "name": "password",
+                    "onChange": [Function],
+                    "type": "password",
+                    "value": "",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "input",
+                },
+              ],
+              "type": "label",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Login",
+                "className": "login-button",
+              },
+              "ref": null,
+              "rendered": "Login",
+              "type": "button",
+            },
+          ],
+          "type": "form",
+        },
+        "",
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+    "disableLifecycleMethods": true,
+  },
+}
+`;

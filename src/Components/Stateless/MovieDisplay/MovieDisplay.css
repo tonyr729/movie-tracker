@@ -11,9 +11,13 @@
   width: 90%;
   border-radius: 5px; }
 
-.movie-card, .favorite-card p {
+.movie-title {
   color: #ECE9E6;
-  font-size: 21px;
+  font-size: 21px; }
+
+.movie-card, .favorite-card p {
+  color: white;
+  font-size: 18px;
   margin: 0 auto 10px; }
 
 .movie-card {
