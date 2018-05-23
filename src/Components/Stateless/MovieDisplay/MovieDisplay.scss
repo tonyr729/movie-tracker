@@ -17,7 +17,7 @@
 .selected-movie {
   width: 98%;
   margin: 10px auto;
-  height: 548px;
+  height: 499px;
   background-color: #000;
   border-top: 1px solid #26a56669;
   border-bottom: 1px solid #26a56669;
@@ -29,17 +29,42 @@
     -webkit-mask-image: -webkit-gradient(linear, left top, right top, from(#00000063), to(rgba(0, 0, 0, 0)));
   }
   .fav-button, 
-  .fav-button-selected {
+  .fav-button-selected,
+  .nav-favorite {
     position: relative;
-    bottom: 880px;
-    left: 585px;
+    bottom: 570px;
+    left: 292px;
     width: 110px;
     height: 40px;
     font-size: 26px;
   }
+
+  .fav-button-selected-user,
+  .fav-button-user {
+    position: relative;
+    bottom: 1140px;
+    left: 585px;
+    position: relative;
+    bottom: 1140px;
+    left: 585px;
+    color: #26a565;
+    background-color: #353434;
+    width: 110px;
+    height: 40px;
+    font-size: 26px;
+    width: 110px;
+    height: 40px;
+    font-size: 26px;
+  }
+
+  .fav-button-selected-user {
+    color: #ffffff;
+    background-color: #26a565;
+  }
+
   .rating {
     position: relative;
-    bottom: 840px;
+    bottom: 1100px;
     border: 4px solid;
     left: 475px;
     width: 93px;
@@ -87,7 +112,7 @@
 }
 
 .movie-card-selected {
-  height: 200px;
+  height: 495px;
 }
 
 .movie-poster {
@@ -107,8 +132,8 @@
   color: #fff;
   position: relative;
   font-size: 19px;
-  top: -915px;
-  left: -325px;
+  top: -1137px;
+left: 475px;
 }
 
 .fav-button,
