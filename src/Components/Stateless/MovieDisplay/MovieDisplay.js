@@ -4,6 +4,7 @@ import './MovieDisplay.css';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { addMovies, addFavorites, removeFavorite } from './../../../Actions/actions';
+import { NavLink } from 'react-router-dom';
 
 class MovieDisplay extends Component {
   constructor() {
@@ -34,13 +35,15 @@ class MovieDisplay extends Component {
 
     const movieDisplay = this.props.movies.map((movie, index) => {
       const favorite = this.props.favorites.find(favorite => favorite.favoriteId === movie.movie_id)      
-      return (
+      const favButton = this.props.user.name ? 
+      <button className='fav-button'  onClick={() => this.updateFavorites(movie)}>{favorite ? 'Delete' : 'Favorite'}</button> 
+      : <NavLink className='nav' to='/signup'>Log in to favorite</NavLink>;
 
+      return (
         <div key={index} className={favorite ? 'favorite-card' : 'movie-card'} >
           <p className='movie-title'>{movie.title}</p>
           <img className='movie-poster' src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title}/>
-          <button className='fav-button' onClick={() => this.updateFavorites(movie)}>{favorite ? 'Delete' : 'Favorite'}</button>
-
+          {favButton}
         </div>
       );
     });
