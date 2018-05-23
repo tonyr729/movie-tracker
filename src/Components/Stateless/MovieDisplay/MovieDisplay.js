@@ -28,13 +28,16 @@ class MovieDisplay extends Component {
   showSelectedMovie = (movie) => {
     if (this.state.selectedMovie) {
       const favorite = this.props.favorites.find(favorite => favorite.favoriteId === movie.movie_id);
+      const favButton = this.props.user.name ? 
+        <button className={favorite ? 'fav-button-selected' : 'fav-button'} onClick={() => this.updateFavorites(movie)}>{favorite ? '★' : '☆'}</button>
+      : <NavLink className='nav-favorite' to='/signup'><button className={favorite ? 'fav-button-selected' : 'fav-button'}>{favorite ? '★' : '☆'}</button></NavLink>;
       return (
         <div className={'movie-card-selected'} >
           <p className='movie-title-selected'>{this.state.selectedMovie.title}</p>
           <img className='movie-poster-selected' src={`https://image.tmdb.org/t/p/w500${this.state.selectedMovie.poster_path}`} alt={this.state.selectedMovie.title}/>
           <div className='overview'><p>{this.state.selectedMovie.overview}</p></div>
           <div className='rating'>{this.state.selectedMovie.vote_average} / 10</div>
-          <button className={favorite ? 'fav-button-selected' : 'fav-button'} onClick={() => this.updateFavorites(this.state.selectedMovie)}>{favorite ? '★' : '☆'}</button>
+          {favButton}
         </div>
       )
     } else {
@@ -64,11 +67,10 @@ class MovieDisplay extends Component {
       const favorite = this.props.favorites.find(favorite => favorite.favoriteId === movie.movie_id)      
       const favButton = this.props.user.name ? 
         <button className={favorite ? 'fav-button-selected' : 'fav-button'} onClick={() => this.updateFavorites(movie)}>{favorite ? '★' : '☆'}</button>
-      : <NavLink className='nav' to='/signup'>Log in to favorite</NavLink>;
+      : <NavLink className='nav-favorite' to='/signup'><button className={favorite ? 'fav-button-selected' : 'fav-button'}>{favorite ? '★' : '☆'}</button></NavLink>;
 
       return (
-        <div key={index} className={favorite ? 'favorite-card' : 'movie-card'} >
-          <p className='movie-title'>{movie.title}</p>
+        <div key={index} className='movie-card'>
           <img onClick={() => this.handleSelectedMovie(movie)} className='movie-poster' src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title}/>
           {favButton}
         </div>

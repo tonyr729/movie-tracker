@@ -43,6 +43,9 @@
     font-size: 26px;
     color: #26a566; }
 
+.nav-favorite {
+  height: 10px; }
+
 .movie-title {
   color: #ECE9E6;
   font-size: 21px; }
@@ -123,30 +126,7 @@
   display: flex;
   justify-content: space-between; }
 
-svg {
-  fill: red; }
-
-.left-arrow {
-  width: 7vh;
-  background-size: cover;
-  transform: rotate(180deg); }
-
-.right-arrow {
-  width: 7vh;
-  background-size: cover; }
-
 .movie-card img {
-  width: inherit; }
-
-.favorite-card {
-  background-color: #6d0404;
-  box-shadow: 2px 0px 20px #cecccc;
-  box-sizing: content-box;
-  margin: 0px 20px 25px;
-  padding: 4vh;
-  width: 35vh; }
-
-.favorite-card img {
   width: inherit; }
 
 .scroll::-webkit-scrollbar {
