@@ -67,7 +67,8 @@ export const postMovieToFavorites = async (movie, favorites) => {
   try {
     const url = 'http://localhost:3000/api/users/favorites/new';
     const newMovie = JSON.stringify(movie);
-    const match = favorites.find(favorite => favorite.favoriteId === movie.movie_id);
+    const match = favorites.find(favorite => 
+      favorite.favoriteId === movie.movie_id);
     if (!match) {
       const response  = await fetch(url, {
         method: 'POST', 

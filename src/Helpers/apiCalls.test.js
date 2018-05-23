@@ -1,10 +1,12 @@
-import { fetchMovieData, signIn, signUp, postMovieToFavorites, retrieveFavorites, deleteFavorite } from './apiCalls';
+import { fetchMovieData, signIn, signUp, 
+  postMovieToFavorites, retrieveFavorites, deleteFavorite } from './apiCalls';
 import {apikey} from './../apikey';
 
 jest.mock('./DataCleaner', () => {
   return jest.fn().mockImplementation(() => {
     return {
-      cleanMovies: jest.fn().mockImplementation(() => Promise.resolve([{data1: "data"}, {data2: "data2"}]))
+      cleanMovies: jest.fn().mockImplementation(() => 
+        Promise.resolve([{data1: "data"}, {data2: "data2"}]))
     };
   });
 });
@@ -38,7 +40,8 @@ describe('api tests', () => {
     it('should throw an error if the promise rejects', async () => {
       let expected = new Error('Failed to fetch');
   
-      window.fetch = jest.fn().mockImplementation(() => Promise.reject(expected));
+      window.fetch = jest.fn().mockImplementation(() => 
+        Promise.reject(expected));
   
       await expect(fetchMovieData()).rejects.toEqual(expected);
     });
@@ -238,7 +241,8 @@ describe('api tests', () => {
     it('should throw an error if the promise rejects', async () => {
       let expected = new Error('Failed to fetch');
   
-      window.fetch = jest.fn().mockImplementation(() => Promise.reject(expected));
+      window.fetch = jest.fn().mockImplementation(() => 
+        Promise.reject(expected));
   
       await expect(deleteFavorite()).rejects.toEqual(expected);
     });

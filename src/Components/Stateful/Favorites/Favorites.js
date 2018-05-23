@@ -17,7 +17,7 @@ export class Favorites extends Component{
   }
 
   componentWillReceiveProps(){
-    this.displayFavorites()
+    this.displayFavorites();
   }
 
 
@@ -28,7 +28,8 @@ export class Favorites extends Component{
 
   convertFavorites = () => {
     const foundFavorites = this.props.favorites.map((favorite) => {
-      const matchedMovie = this.props.movies.find(movie => movie.movie_id === favorite.favoriteId);
+      const matchedMovie = this.props.movies.find(movie => 
+        movie.movie_id === favorite.favoriteId);
       return matchedMovie;
     });
     return foundFavorites;
@@ -39,8 +40,10 @@ export class Favorites extends Component{
     const renderedFavorites = favorites.map((movie, index) => {
       return (
         <div key={index} className='movie-card' >
-          <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title}/>
-          <button className='delete-button' onClick={() => this.updateFavoritesOnDelete(movie)}>Remove</button>
+          <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
+            alt={movie.title}/>
+          <button className='delete-button' 
+            onClick={() => this.updateFavoritesOnDelete(movie)}>Remove</button>
         </div>
       );
     });
@@ -72,7 +75,8 @@ Favorites.propTypes = {
   user: PropTypes.object,
   favorites: PropTypes.array,
   movies: PropTypes.array,
-  removeFavorite: PropTypes.func
+  removeFavorite: PropTypes.func,
+  history: PropTypes.string
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Favorites);
