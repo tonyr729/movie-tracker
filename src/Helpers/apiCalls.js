@@ -17,7 +17,7 @@ export const fetchMovieData = async (user) => {
 
 export const signIn = async (email, password) => {
   try {
-    const url = '/api/users';
+    const url = 'http://localhost:3000/api/users';
     const login = {email, password};
     const stringifiedBody = JSON.stringify(login);
     const response = await fetch(url, {
@@ -41,7 +41,7 @@ export const signIn = async (email, password) => {
 
 export const signUp = async (name, email, password) => {
   try {
-    const url = '/api/users/new';
+    const url = 'http://localhost:3000/api/users/new';
     const body = {name, email, password};
     const stringifiedBody = JSON.stringify(body);
     const response = await fetch(url, {
@@ -65,7 +65,7 @@ export const signUp = async (name, email, password) => {
 
 export const postMovieToFavorites = async (movie, favorites) => {
   try {
-    const url = '/api/users/favorites/new';
+    const url = 'http://localhost:3000/api/users/favorites/new';
     const newMovie = JSON.stringify(movie);
     const match = favorites.find(favorite => favorite.favoriteId === movie.movie_id);
     if (!match) {
@@ -85,7 +85,7 @@ export const postMovieToFavorites = async (movie, favorites) => {
 export const retrieveFavorites = async (userId) => {
   try {
     const cleaner = new DataCleaner();
-    const url = `/api/users/${userId}/favorites`;
+    const url = `http://localhost:3000/api/users/${userId}/favorites`;
     const response = await fetch(url);
     if (response.ok) {
       const favorites = await response.json();
@@ -99,7 +99,7 @@ export const retrieveFavorites = async (userId) => {
 
 export const deleteFavorite = async (userId, movieId) => {
   try {
-    const url = `/api/users/${userId}/favorites/${movieId}`;
+    const url = `http://localhost:3000/api/users/${userId}/favorites/${movieId}`;
     const response = await fetch(url, {
       method: 'DELETE'
     });
