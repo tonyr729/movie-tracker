@@ -1,0 +1,1075 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Signup Component matches snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Signup
+    user={
+        Object {
+            "name": "Jack",
+          }
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <h2>
+          Sign Up Here!
+</h2>,
+        <form
+          className="signup"
+          onSubmit={[Function]}
+>
+          <label>
+                    Name
+                    <input
+                              className="signup-input name"
+                              name="name"
+                              onChange={[Function]}
+                              type="text"
+                              value=""
+                    />
+          </label>
+          <label>
+                    Email
+                    <input
+                              className="signup-input email"
+                              name="email"
+                              onChange={[Function]}
+                              type="email"
+                              value=""
+                    />
+          </label>
+          <label>
+                    Password
+                    <input
+                              className="signup-input"
+                              name="password"
+                              onChange={[Function]}
+                              type="password"
+                              value=""
+                    />
+          </label>
+          <button
+                    className="signup-button"
+          >
+                    Sign Up
+          </button>
+</form>,
+        <h2 />,
+      ],
+      "className": "signup-container",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Sign Up Here!",
+        },
+        "ref": null,
+        "rendered": "Sign Up Here!",
+        "type": "h2",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <label>
+              Name
+              <input
+                            className="signup-input name"
+                            name="name"
+                            onChange={[Function]}
+                            type="text"
+                            value=""
+              />
+</label>,
+            <label>
+              Email
+              <input
+                            className="signup-input email"
+                            name="email"
+                            onChange={[Function]}
+                            type="email"
+                            value=""
+              />
+</label>,
+            <label>
+              Password
+              <input
+                            className="signup-input"
+                            name="password"
+                            onChange={[Function]}
+                            type="password"
+                            value=""
+              />
+</label>,
+            <button
+              className="signup-button"
+>
+              Sign Up
+</button>,
+          ],
+          "className": "signup",
+          "onSubmit": [Function],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "Name",
+                <input
+                  className="signup-input name"
+                  name="name"
+                  onChange={[Function]}
+                  type="text"
+                  value=""
+/>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "Name",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "className": "signup-input name",
+                  "name": "name",
+                  "onChange": [Function],
+                  "type": "text",
+                  "value": "",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "input",
+              },
+            ],
+            "type": "label",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "Email",
+                <input
+                  className="signup-input email"
+                  name="email"
+                  onChange={[Function]}
+                  type="email"
+                  value=""
+/>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "Email",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "className": "signup-input email",
+                  "name": "email",
+                  "onChange": [Function],
+                  "type": "email",
+                  "value": "",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "input",
+              },
+            ],
+            "type": "label",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "Password",
+                <input
+                  className="signup-input"
+                  name="password"
+                  onChange={[Function]}
+                  type="password"
+                  value=""
+/>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "Password",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "className": "signup-input",
+                  "name": "password",
+                  "onChange": [Function],
+                  "type": "password",
+                  "value": "",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "input",
+              },
+            ],
+            "type": "label",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Sign Up",
+              "className": "signup-button",
+            },
+            "ref": null,
+            "rendered": "Sign Up",
+            "type": "button",
+          },
+        ],
+        "type": "form",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "",
+        },
+        "ref": null,
+        "rendered": "",
+        "type": "h2",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <h2>
+            Sign Up Here!
+</h2>,
+          <form
+            className="signup"
+            onSubmit={[Function]}
+>
+            <label>
+                        Name
+                        <input
+                                    className="signup-input name"
+                                    name="name"
+                                    onChange={[Function]}
+                                    type="text"
+                                    value=""
+                        />
+            </label>
+            <label>
+                        Email
+                        <input
+                                    className="signup-input email"
+                                    name="email"
+                                    onChange={[Function]}
+                                    type="email"
+                                    value=""
+                        />
+            </label>
+            <label>
+                        Password
+                        <input
+                                    className="signup-input"
+                                    name="password"
+                                    onChange={[Function]}
+                                    type="password"
+                                    value=""
+                        />
+            </label>
+            <button
+                        className="signup-button"
+            >
+                        Sign Up
+            </button>
+</form>,
+          <h2 />,
+        ],
+        "className": "signup-container",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Sign Up Here!",
+          },
+          "ref": null,
+          "rendered": "Sign Up Here!",
+          "type": "h2",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <label>
+                Name
+                <input
+                                className="signup-input name"
+                                name="name"
+                                onChange={[Function]}
+                                type="text"
+                                value=""
+                />
+</label>,
+              <label>
+                Email
+                <input
+                                className="signup-input email"
+                                name="email"
+                                onChange={[Function]}
+                                type="email"
+                                value=""
+                />
+</label>,
+              <label>
+                Password
+                <input
+                                className="signup-input"
+                                name="password"
+                                onChange={[Function]}
+                                type="password"
+                                value=""
+                />
+</label>,
+              <button
+                className="signup-button"
+>
+                Sign Up
+</button>,
+            ],
+            "className": "signup",
+            "onSubmit": [Function],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "Name",
+                  <input
+                    className="signup-input name"
+                    name="name"
+                    onChange={[Function]}
+                    type="text"
+                    value=""
+/>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "Name",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "signup-input name",
+                    "name": "name",
+                    "onChange": [Function],
+                    "type": "text",
+                    "value": "",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "input",
+                },
+              ],
+              "type": "label",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "Email",
+                  <input
+                    className="signup-input email"
+                    name="email"
+                    onChange={[Function]}
+                    type="email"
+                    value=""
+/>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "Email",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "signup-input email",
+                    "name": "email",
+                    "onChange": [Function],
+                    "type": "email",
+                    "value": "",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "input",
+                },
+              ],
+              "type": "label",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "Password",
+                  <input
+                    className="signup-input"
+                    name="password"
+                    onChange={[Function]}
+                    type="password"
+                    value=""
+/>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "Password",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "signup-input",
+                    "name": "password",
+                    "onChange": [Function],
+                    "type": "password",
+                    "value": "",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "input",
+                },
+              ],
+              "type": "label",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Sign Up",
+                "className": "signup-button",
+              },
+              "ref": null,
+              "rendered": "Sign Up",
+              "type": "button",
+            },
+          ],
+          "type": "form",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "",
+          },
+          "ref": null,
+          "rendered": "",
+          "type": "h2",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`signUp Component matches snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Signup
+    addFavorites={[Function]}
+    signUp={[Function]}
+    user={
+        Object {
+            "name": "Jack",
+          }
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <h2>
+          Sign Up Here!
+</h2>,
+        <form
+          className="signup"
+          onSubmit={[Function]}
+>
+          <label>
+                    Name
+                    <input
+                              className="signup-input name"
+                              name="name"
+                              onChange={[Function]}
+                              type="text"
+                              value=""
+                    />
+          </label>
+          <label>
+                    Email
+                    <input
+                              className="signup-input email"
+                              name="email"
+                              onChange={[Function]}
+                              type="email"
+                              value=""
+                    />
+          </label>
+          <label>
+                    Password
+                    <input
+                              className="signup-input"
+                              name="password"
+                              onChange={[Function]}
+                              type="password"
+                              value=""
+                    />
+          </label>
+          <button
+                    className="signup-button"
+          >
+                    Sign Up
+          </button>
+</form>,
+        <h2 />,
+      ],
+      "className": "signup-container",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Sign Up Here!",
+        },
+        "ref": null,
+        "rendered": "Sign Up Here!",
+        "type": "h2",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <label>
+              Name
+              <input
+                            className="signup-input name"
+                            name="name"
+                            onChange={[Function]}
+                            type="text"
+                            value=""
+              />
+</label>,
+            <label>
+              Email
+              <input
+                            className="signup-input email"
+                            name="email"
+                            onChange={[Function]}
+                            type="email"
+                            value=""
+              />
+</label>,
+            <label>
+              Password
+              <input
+                            className="signup-input"
+                            name="password"
+                            onChange={[Function]}
+                            type="password"
+                            value=""
+              />
+</label>,
+            <button
+              className="signup-button"
+>
+              Sign Up
+</button>,
+          ],
+          "className": "signup",
+          "onSubmit": [Function],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "Name",
+                <input
+                  className="signup-input name"
+                  name="name"
+                  onChange={[Function]}
+                  type="text"
+                  value=""
+/>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "Name",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "className": "signup-input name",
+                  "name": "name",
+                  "onChange": [Function],
+                  "type": "text",
+                  "value": "",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "input",
+              },
+            ],
+            "type": "label",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "Email",
+                <input
+                  className="signup-input email"
+                  name="email"
+                  onChange={[Function]}
+                  type="email"
+                  value=""
+/>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "Email",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "className": "signup-input email",
+                  "name": "email",
+                  "onChange": [Function],
+                  "type": "email",
+                  "value": "",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "input",
+              },
+            ],
+            "type": "label",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "Password",
+                <input
+                  className="signup-input"
+                  name="password"
+                  onChange={[Function]}
+                  type="password"
+                  value=""
+/>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "Password",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "className": "signup-input",
+                  "name": "password",
+                  "onChange": [Function],
+                  "type": "password",
+                  "value": "",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "input",
+              },
+            ],
+            "type": "label",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Sign Up",
+              "className": "signup-button",
+            },
+            "ref": null,
+            "rendered": "Sign Up",
+            "type": "button",
+          },
+        ],
+        "type": "form",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "",
+        },
+        "ref": null,
+        "rendered": "",
+        "type": "h2",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <h2>
+            Sign Up Here!
+</h2>,
+          <form
+            className="signup"
+            onSubmit={[Function]}
+>
+            <label>
+                        Name
+                        <input
+                                    className="signup-input name"
+                                    name="name"
+                                    onChange={[Function]}
+                                    type="text"
+                                    value=""
+                        />
+            </label>
+            <label>
+                        Email
+                        <input
+                                    className="signup-input email"
+                                    name="email"
+                                    onChange={[Function]}
+                                    type="email"
+                                    value=""
+                        />
+            </label>
+            <label>
+                        Password
+                        <input
+                                    className="signup-input"
+                                    name="password"
+                                    onChange={[Function]}
+                                    type="password"
+                                    value=""
+                        />
+            </label>
+            <button
+                        className="signup-button"
+            >
+                        Sign Up
+            </button>
+</form>,
+          <h2 />,
+        ],
+        "className": "signup-container",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Sign Up Here!",
+          },
+          "ref": null,
+          "rendered": "Sign Up Here!",
+          "type": "h2",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <label>
+                Name
+                <input
+                                className="signup-input name"
+                                name="name"
+                                onChange={[Function]}
+                                type="text"
+                                value=""
+                />
+</label>,
+              <label>
+                Email
+                <input
+                                className="signup-input email"
+                                name="email"
+                                onChange={[Function]}
+                                type="email"
+                                value=""
+                />
+</label>,
+              <label>
+                Password
+                <input
+                                className="signup-input"
+                                name="password"
+                                onChange={[Function]}
+                                type="password"
+                                value=""
+                />
+</label>,
+              <button
+                className="signup-button"
+>
+                Sign Up
+</button>,
+            ],
+            "className": "signup",
+            "onSubmit": [Function],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "Name",
+                  <input
+                    className="signup-input name"
+                    name="name"
+                    onChange={[Function]}
+                    type="text"
+                    value=""
+/>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "Name",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "signup-input name",
+                    "name": "name",
+                    "onChange": [Function],
+                    "type": "text",
+                    "value": "",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "input",
+                },
+              ],
+              "type": "label",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "Email",
+                  <input
+                    className="signup-input email"
+                    name="email"
+                    onChange={[Function]}
+                    type="email"
+                    value=""
+/>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "Email",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "signup-input email",
+                    "name": "email",
+                    "onChange": [Function],
+                    "type": "email",
+                    "value": "",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "input",
+                },
+              ],
+              "type": "label",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "Password",
+                  <input
+                    className="signup-input"
+                    name="password"
+                    onChange={[Function]}
+                    type="password"
+                    value=""
+/>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "Password",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "signup-input",
+                    "name": "password",
+                    "onChange": [Function],
+                    "type": "password",
+                    "value": "",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "input",
+                },
+              ],
+              "type": "label",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Sign Up",
+                "className": "signup-button",
+              },
+              "ref": null,
+              "rendered": "Sign Up",
+              "type": "button",
+            },
+          ],
+          "type": "form",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "",
+          },
+          "ref": null,
+          "rendered": "",
+          "type": "h2",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

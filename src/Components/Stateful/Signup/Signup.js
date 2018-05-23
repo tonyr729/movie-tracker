@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {signUp} from './../../../Helpers/apiCalls'; 
 import './Signup.css';
 
-class Signup extends Component {
+export class Signup extends Component {
   constructor() {
     super();
     this.state = {
