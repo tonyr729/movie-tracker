@@ -40,9 +40,8 @@ export class Favorites extends Component{
       console.log('danman', movie, index)
       return (
         <div key={index} className='movie-card' >
-          <p>{movie.title}</p>
           <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title}/>
-          <button onClick={() => this.updateFavoritesOnDelete(movie)}>Remove</button>
+          <button className='delete-button' onClick={() => this.updateFavoritesOnDelete(movie)}>Remove</button>
         </div>
       );
     });
