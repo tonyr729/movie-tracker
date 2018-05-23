@@ -37,6 +37,7 @@ export class Favorites extends Component{
   displayFavorites = () => {
     const favorites = this.convertFavorites();
     const renderedFavorites = favorites.map((movie, index) => {
+      console.log('danman', movie, index)
       return (
         <div key={index} className='movie-card' >
           <p>{movie.title}</p>
