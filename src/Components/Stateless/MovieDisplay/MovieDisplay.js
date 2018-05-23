@@ -9,11 +9,41 @@ import { NavLink } from 'react-router-dom';
 class MovieDisplay extends Component {
   constructor() {
     super();
+    this.state = {
+      selectedMovie: null
+    }
   }
 
   async componentDidMount () {
     const movieData = await fetchMovieData(this.props.user);
     this.props.addMovies(movieData);
+  }
+
+  handleSelectedMovie =(movie) => {
+    this.setState({
+      selectedMovie: movie
+    });
+  }
+
+  showSelectedMovie = (movie) => {
+    if (this.state.selectedMovie) {
+      const favorite = this.props.favorites.find(favorite => favorite.favoriteId === movie.movie_id);
+      return (
+        <div className={'movie-card-selected'} >
+          <p className='movie-title-selected'>{this.state.selectedMovie.title}</p>
+          <img className='movie-poster-selected' src={`https://image.tmdb.org/t/p/w500${this.state.selectedMovie.poster_path}`} alt={this.state.selectedMovie.title}/>
+          <div className='overview'><p>{this.state.selectedMovie.overview}</p></div>
+          <div className='rating'>{this.state.selectedMovie.vote_average} / 10</div>
+          <button className={favorite ? 'fav-button-selected' : 'fav-button'} onClick={() => this.updateFavorites(this.state.selectedMovie)}>{favorite ? '★' : '☆'}</button>
+        </div>
+      )
+    } else {
+      return (
+        <div className='pick-movie-text'>
+          <p>Select a movie</p>
+        </div>
+      )
+    }
   }
 
   async updateFavorites (movie) {
@@ -23,26 +53,23 @@ class MovieDisplay extends Component {
       const userFavorites = await retrieveFavorites(this.props.user.id);
       const newFavorites = [...userFavorites, {favoriteId: movie.movie_id}]
       this.props.addFavorites(newFavorites);
-      console.log('adding')
     } else {
       deleteFavorite(this.props.user.id, movie.movie_id);
       this.props.removeFavorite(movie);
-      console.log('removing')
     }
   }
   
   render () {
-
     const movieDisplay = this.props.movies.map((movie, index) => {
       const favorite = this.props.favorites.find(favorite => favorite.favoriteId === movie.movie_id)      
       const favButton = this.props.user.name ? 
-      <button className='fav-button'  onClick={() => this.updateFavorites(movie)}>{favorite ? 'Delete' : 'Favorite'}</button> 
+        <button className={favorite ? 'fav-button-selected' : 'fav-button'} onClick={() => this.updateFavorites(movie)}>{favorite ? '★' : '☆'}</button>
       : <NavLink className='nav' to='/signup'>Log in to favorite</NavLink>;
 
       return (
         <div key={index} className={favorite ? 'favorite-card' : 'movie-card'} >
           <p className='movie-title'>{movie.title}</p>
-          <img className='movie-poster' src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title}/>
+          <img onClick={() => this.handleSelectedMovie(movie)} className='movie-poster' src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title}/>
           {favButton}
         </div>
       );
@@ -50,19 +77,8 @@ class MovieDisplay extends Component {
 
     return (
       <div>
-        <div className='arrows'>
-          <div className='left-arrow'>
-            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
-              <path d='M0 0h24v24H0z' fill='none'/>
-              <path d='M10 16.5l6-4.5-6-4.5v9zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z'/>
-            </svg> 
-          </div>      
-          <div className='right-arrow' >
-            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
-              <path d='M0 0h24v24H0z' fill='none'/>
-              <path d='M10 16.5l6-4.5-6-4.5v9zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z'/>
-            </svg>
-          </div>
+        <div className='selected-movie'>
+          {this.showSelectedMovie(this.state.selectedMovie)}
         </div>
         <div className='movies-container scroll'>
           { movieDisplay }
