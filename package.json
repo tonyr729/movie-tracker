@@ -1,7 +1,6 @@
 {
   "name": "movie-tracker",
   "version": "0.1.0",
-  "proxy": "http://localhost:3000",
   "private": true,
   "dependencies": {
     "node-sass-chokidar": "^1.2.2",
