@@ -28,11 +28,11 @@ describe('Actions', () => {
     });
 
     it('should add movie data to the favorites', () => {
-      let mockMovieData = {movie: 'Fake Film'};
+      let mockMovieData = [{favoriteId: 'Fake Film'}]
 
       let actual = addFavorites(mockMovieData);
 
-      expect(actual.movie).toEqual(mockMovieData);
+      expect(actual.movies).toEqual(mockMovieData);
     });
   });
   describe('login', () => {

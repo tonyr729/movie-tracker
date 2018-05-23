@@ -43,14 +43,12 @@ ShallowWrapper {
         <div
           className="movie-card"
 >
-          <p>
-                    Batman
-          </p>
           <img
                     alt="Batman"
                     src="https://image.tmdb.org/t/p/w500undefined"
           />
           <button
+                    className="delete-button"
                     onClick={[Function]}
           >
                     Remove
@@ -67,14 +65,12 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            <p>
-              Batman
-</p>,
             <img
               alt="Batman"
               src="https://image.tmdb.org/t/p/w500undefined"
 />,
             <button
+              className="delete-button"
               onClick={[Function]}
 >
               Remove
@@ -84,17 +80,6 @@ ShallowWrapper {
         },
         "ref": null,
         "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Batman",
-            },
-            "ref": null,
-            "rendered": "Batman",
-            "type": "p",
-          },
           Object {
             "instance": null,
             "key": undefined,
@@ -113,6 +98,7 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": "Remove",
+              "className": "delete-button",
               "onClick": [Function],
             },
             "ref": null,
@@ -135,14 +121,12 @@ ShallowWrapper {
           <div
             className="movie-card"
 >
-            <p>
-                        Batman
-            </p>
             <img
                         alt="Batman"
                         src="https://image.tmdb.org/t/p/w500undefined"
             />
             <button
+                        className="delete-button"
                         onClick={[Function]}
             >
                         Remove
@@ -159,14 +143,12 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              <p>
-                Batman
-</p>,
               <img
                 alt="Batman"
                 src="https://image.tmdb.org/t/p/w500undefined"
 />,
               <button
+                className="delete-button"
                 onClick={[Function]}
 >
                 Remove
@@ -176,17 +158,6 @@ ShallowWrapper {
           },
           "ref": null,
           "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "Batman",
-              },
-              "ref": null,
-              "rendered": "Batman",
-              "type": "p",
-            },
             Object {
               "instance": null,
               "key": undefined,
@@ -205,6 +176,7 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": "Remove",
+                "className": "delete-button",
                 "onClick": [Function],
               },
               "ref": null,
