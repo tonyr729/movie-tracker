@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import { addMovies, addFavorites, removeFavorite } from './../../../Actions/actions';
 import { NavLink } from 'react-router-dom';
 
-class MovieDisplay extends Component {
+export class MovieDisplay extends Component {
   constructor() {
     super();
     this.state = {
@@ -57,6 +57,7 @@ class MovieDisplay extends Component {
       const newFavorites = [...userFavorites, {favoriteId: movie.movie_id}]
       this.props.addFavorites(newFavorites);
     } else {
+
       deleteFavorite(this.props.user.id, movie.movie_id);
       this.props.removeFavorite(movie);
     }
@@ -90,7 +91,7 @@ class MovieDisplay extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
+export const mapStateToProps = (state) => {
   return ({
     movies: state.movies,
     favorites: state.favorites,
@@ -98,7 +99,7 @@ const mapStateToProps = (state) => {
   });
 };
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   addMovies: (movieData) => dispatch(addMovies(movieData)),
   addFavorites: (movie) => dispatch(addFavorites(movie)),
   removeFavorite: (movie) => dispatch(removeFavorite(movie))
@@ -107,7 +108,7 @@ const mapDispatchToProps = dispatch => ({
 MovieDisplay.propTypes = {
   movies: PropTypes.array.isRequired,
   favorites: PropTypes.array,
-  user: PropTypes.obj,
+  user: PropTypes.object,
   addMovies: PropTypes.func.isRequired,
   addFavorites: PropTypes.func
 };

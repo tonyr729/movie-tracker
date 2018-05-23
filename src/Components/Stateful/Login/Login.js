@@ -92,7 +92,7 @@ export const mapDispatchToProps = (dispatch) => ({
 });
 
 Login.propTypes = {
-  user: PropTypes.obj,
+  user: PropTypes.object,
   login: PropTypes.func,
   addFavorites: PropTypes.func
 };

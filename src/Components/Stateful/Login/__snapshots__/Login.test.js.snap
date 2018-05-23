@@ -42,7 +42,7 @@ ShallowWrapper {
                               name="email"
                               onChange={[Function]}
                               placeholder="*JohnDoe@gmail.com*"
-                              type="text"
+                              type="email"
                               value=""
                     />
           </label>
@@ -96,7 +96,7 @@ ShallowWrapper {
                             name="email"
                             onChange={[Function]}
                             placeholder="*JohnDoe@gmail.com*"
-                            type="text"
+                            type="email"
                             value=""
               />
 </label>,
@@ -135,7 +135,7 @@ ShallowWrapper {
                   name="email"
                   onChange={[Function]}
                   placeholder="*JohnDoe@gmail.com*"
-                  type="text"
+                  type="email"
                   value=""
 />,
               ],
@@ -153,7 +153,7 @@ ShallowWrapper {
                   "name": "email",
                   "onChange": [Function],
                   "placeholder": "*JohnDoe@gmail.com*",
-                  "type": "text",
+                  "type": "email",
                   "value": "",
                 },
                 "ref": null,
@@ -243,7 +243,7 @@ ShallowWrapper {
                                     name="email"
                                     onChange={[Function]}
                                     placeholder="*JohnDoe@gmail.com*"
-                                    type="text"
+                                    type="email"
                                     value=""
                         />
             </label>
@@ -297,7 +297,7 @@ ShallowWrapper {
                                 name="email"
                                 onChange={[Function]}
                                 placeholder="*JohnDoe@gmail.com*"
-                                type="text"
+                                type="email"
                                 value=""
                 />
 </label>,
@@ -336,7 +336,7 @@ ShallowWrapper {
                     name="email"
                     onChange={[Function]}
                     placeholder="*JohnDoe@gmail.com*"
-                    type="text"
+                    type="email"
                     value=""
 />,
                 ],
@@ -354,7 +354,7 @@ ShallowWrapper {
                     "name": "email",
                     "onChange": [Function],
                     "placeholder": "*JohnDoe@gmail.com*",
-                    "type": "text",
+                    "type": "email",
                     "value": "",
                   },
                   "ref": null,

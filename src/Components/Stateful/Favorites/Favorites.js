@@ -37,7 +37,6 @@ export class Favorites extends Component{
   displayFavorites = () => {
     const favorites = this.convertFavorites();
     const renderedFavorites = favorites.map((movie, index) => {
-      console.log('danman', movie, index)
       return (
         <div key={index} className='movie-card' >
           <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title}/>
@@ -70,7 +69,7 @@ export const mapDispatchToProps = (dispatch) => ({
 });
 
 Favorites.propTypes = {
-  user: PropTypes.obj,
+  user: PropTypes.object,
   favorites: PropTypes.array,
   movies: PropTypes.array,
   removeFavorite: PropTypes.func

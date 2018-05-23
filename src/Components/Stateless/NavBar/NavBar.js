@@ -40,7 +40,7 @@ export const mapDispatchToProps = (dispatch) => ({
 });
 
 NavBar.propTypes = {
-  user: PropTypes.obj,
+  user: PropTypes.object,
   logout: PropTypes.func
 };
 

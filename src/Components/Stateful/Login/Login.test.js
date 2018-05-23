@@ -9,6 +9,7 @@ describe('login', () => {
 
   let login;
   let mockProps;
+  let event;
 
   beforeEach(() => {
 
@@ -19,6 +20,7 @@ describe('login', () => {
     }
 
     login = shallow(<Login {...mockProps} />)
+
   })
 
   describe('Component', () => {
@@ -104,18 +106,6 @@ describe('login', () => {
 
       expect(mockProps.addFavorites).toHaveBeenCalled();
 
-    })
-  })
-
-  describe('handleSigin', () => {
-    
-    it('updates state when users enters their info', () => {
-
-      const event = { target: { name: 'Steph'} };
-      login.instance().handleSignin(event);
-
-      expect(login.state().email).toEqual('hello');
-      
     })
   })
 

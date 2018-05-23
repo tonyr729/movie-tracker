@@ -27,7 +27,7 @@ describe('movies reducer', () => {
       type: 'ADD_MOVIES',
       movieData 
     };
-    let expected = [{movie: 'Avengers'}, {movie: 'test movie'}, {movie: 'anotha one'}];
+    let expected = [{"movie": "test movie"}, {"movie": "anotha one"}];
 
     let newState = moviesReducer(currentState, addMovieAction);
 
