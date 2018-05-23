@@ -60,7 +60,7 @@ describe('api tests', () => {
     });
 
     it('should call signIn with the correct params', async () => {
-      let expected = ['/api/users',
+      let expected = ['http://localhost:3000/api/users',
         {
           method: 'POST',
           headers: {
@@ -108,7 +108,7 @@ describe('api tests', () => {
     });
 
     it('should call signUp with the correct params', async () => {
-      let expected = ['/api/users/new',
+      let expected = ['http://localhost:3000/api/users/new',
         {
           method: 'POST',
           headers: {
@@ -155,7 +155,7 @@ describe('api tests', () => {
     });
 
     it('should call postMovieToFavorites with the correct params', async () => {
-      let expected = ['/api/users/favorites/new',
+      let expected = ['http://localhost:3000/api/users/favorites/new',
         {
           method: 'POST',
           headers: new Headers({
@@ -197,7 +197,7 @@ describe('api tests', () => {
     });
     
     it('should call retrieveFavorites with the correct params', async () => {
-      let expected = '/api/users/7/favorites';
+      let expected = 'http://localhost:3000/api/users/7/favorites';
       await retrieveFavorites(mockUserId);
   
       expect(window.fetch).toHaveBeenCalledWith(expected);
@@ -226,7 +226,7 @@ describe('api tests', () => {
     });
 
     it('should call deleteFavorite with the correct params', async () => {
-      let expected = ['/api/users/7/favorites/383498', {
+      let expected = ['http://localhost:3000/api/users/7/favorites/383498', {
         method: 'DELETE'
       }
       ];
