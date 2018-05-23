@@ -7,7 +7,7 @@ import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 
-class Login extends Component {
+export class Login extends Component {
   constructor() {
     super();
     this.state = {
@@ -35,7 +35,7 @@ class Login extends Component {
       return <Redirect to='/'/>;
     } else {
       return (
-        <h2> {this.props.user} </h2>
+        <h2 className='loginh2'> {this.props.user} </h2>
       );
     }
   }
@@ -82,11 +82,11 @@ class Login extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
+export const mapStateToProps = (state) => ({
   user: state.user
 }); 
 
-const mapDispatchToProps = (dispatch) => ({
+export const mapDispatchToProps = (dispatch) => ({
   login: (user) => dispatch(login(user)),
   addFavorites: (movies) => dispatch(addFavorites(movies))
 });

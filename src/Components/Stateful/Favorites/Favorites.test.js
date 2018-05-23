@@ -23,7 +23,7 @@ describe('Favorites', () => {
   
   describe('component', () => {
     it('matches snapshot', () => {
-      favorites = renderer.create(<Favorites {...mockProps} />, { disableLifecycleMethods: true }).toJSON();
+      favorites = shallow(<Favorites {...mockProps} />, { disableLifecycleMethods: true })
       expect(favorites).toMatchSnapshot();
     });
   });
