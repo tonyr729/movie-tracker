@@ -60,7 +60,7 @@ class Login extends Component {
         <form onSubmit={this.handleSubmit}
           className='login'>
           <label className='email-label'>Email
-            <input type="text" 
+            <input type="email" 
               placeholder='*JohnDoe@gmail.com*'
               onChange={this.handleSignin}
               value={this.state.email}

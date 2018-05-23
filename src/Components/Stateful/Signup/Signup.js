@@ -56,10 +56,10 @@ class Signup extends Component {
             <input className='signup-input name'type="text" name='name' value={this.state.name} onChange={this.handleSignup}/>
           </label>
           <label>Email
-            <input className='signup-input email'type="text" name='email' value={this.state.email} onChange={this.handleSignup}/>
+            <input className='signup-input email'type="email" name='email' value={this.state.email} onChange={this.handleSignup}/>
           </label>
           <label>Password
-            <input className='signup-input'type="text" name='password' value={this.state.password} onChange={this.handleSignup}/>
+            <input className='signup-input' type="password" name='password' value={this.state.password} onChange={this.handleSignup}/>
           </label>
           <button className='signup-button'>Sign Up</button>
         </form>
