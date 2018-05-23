@@ -53,4 +53,74 @@ describe('Signup', () => {
       expect(userSignUp.state('user')).toEqual('Tony');
     });
   });
+
+  describe('handleSubmit', () => {
+
+    let event;
+
+    beforeEach(() => {
+    
+      
+    });
+
+    it.skip('should call signUp method', async () => {
+
+      await userSignUp.instance().handleSignup(event);
+      
+      expect(userSignUp.state('user')).toEqual('Tony');
+    });
+    it.skip('should call signUpAuthorization method', async () => {
+
+      await userSignUp.instance().handleSignup(event);
+      
+      expect(userSignUp.state('user')).toEqual('Tony');
+    });
+  });
+
+  describe('signUpAuthorization', () => {
+
+    let event;
+
+    beforeEach(() => {
+    
+      
+    });
+
+    it('should set state to expected value if param matches value', async () => {
+      const message = {
+        data: "yay",
+        status: "successful"
+      }
+
+      const expected = {
+        name:'',
+        email: '',
+        password: '',
+        status: "Account created, please log in"
+      }
+
+      userSignUp.instance().signUpAuthorization(message);
+
+      expect(userSignUp.state()).toEqual(expected);
+    });
+
+    it('should set state to expected value if param doesnt match value', async () => {
+      const message = {
+        data: "failed",
+      }
+
+      const expected = {
+        name:'',
+        email: '',
+        password: '',
+        status: "failed"
+      }
+
+      userSignUp.instance().signUpAuthorization(message)
+
+      expect(userSignUp.state()).toEqual(expected)
+    })
+  });
+
+
 });
