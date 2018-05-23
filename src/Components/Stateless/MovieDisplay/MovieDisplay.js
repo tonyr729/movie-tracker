@@ -29,7 +29,7 @@ export class MovieDisplay extends Component {
     if (this.state.selectedMovie) {
       const favorite = this.props.favorites.find(favorite => favorite.favoriteId === movie.movie_id);
       const favButton = this.props.user.name ? 
-        <button className={favorite ? 'fav-button-selected' : 'fav-button'} onClick={() => this.updateFavorites(movie)}>{favorite ? '★' : '☆'}</button>
+        <button className={favorite ? 'fav-button-selected-user' : 'fav-button-user'} onClick={() => this.updateFavorites(movie)}>{favorite ? '★' : '☆'}</button>
       : <NavLink className='nav-favorite' to='/signup'><button className={favorite ? 'fav-button-selected' : 'fav-button'}>{favorite ? '★' : '☆'}</button></NavLink>;
       return (
         <div className={'movie-card-selected'} >
