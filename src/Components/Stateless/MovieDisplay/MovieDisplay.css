@@ -95,7 +95,8 @@
     height: 198px; }
 
 .movie-card-selected {
-  height: 495px; }
+  height: 495px;
+  width: 900px; }
 
 .movie-poster {
   border-radius: 5px; }
